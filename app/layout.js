@@ -1,5 +1,6 @@
-import { Inter, Poppins } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
+import MainMenu from '@/components/Mainmenu'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -8,13 +9,17 @@ const poppins = Poppins({
 
 export const metadata = {
   title: 'Build a Champ',
-  description: "Unlock your child's athletic potential with our top-tier digital sports development platform. From beginners to seasoned players, find everything you need to succeed here. Elevate their game today!"
+  description:
+    'Empower young athletes with our premier digital platform. From beginners to seasoned players, find all you need to succeed. Elevate their game now!'
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        
+        {children}
+      </body>
     </html>
   )
 }
