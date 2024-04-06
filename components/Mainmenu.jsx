@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 
 const MainMenu = () => {
   const isDesktop = useMediaQuery('(min-width: 768px)')
+  console.log(isDesktop)
   const router = useRouter()
   const handleClick = () => {
     console.log('clicked')

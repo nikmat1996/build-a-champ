@@ -15,10 +15,10 @@ const Hero = () => {
           <Image src={Hero_bg} className="w-full h-full"/>
         </div>
         <MainMenu />
-        <div className="flex flex-col md:flex-row-reverse max-w-max mx-auto gap-y-6 p-4">
-            <Image src={Hero_img} className=" w-full max-w-[970px] max-h-[646px] "/>
-            <div className="flex flex-col gap-y-3 justify-center md:translate-x-[25%] w-full flex-1">
-                <h1 className="text-[40px]/tight md:text-5xl lg:text-7xl/tight font-bold capitalize max-w-[317px] md:max-w-[555px]">{textHero.h1}</h1>
+        <div className="flex flex-col md:flex-row-reverse w-full gap-y-6  ">
+            <Image src={Hero_img} className="w-full md:w-[885px] "/>
+            <div className="flex flex-col gap-y-3 justify-center translate-x-[25%] w-full max-w-[555px]  ">
+                <h1 className="text-[40px]/tight md:text-5xl lg:text-7xl/tight font-bold capitalize max-w-[317px] md:max-w-[555px] ">{textHero.h1}</h1>
                 <h3 className="text-xl md:text-4xl/tight font-medium  tracking-tight max-w-[317px] md:max-w-[555px]">{textHero.h3}</h3>
             </div>
         </div>
