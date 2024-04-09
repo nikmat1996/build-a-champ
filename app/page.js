@@ -4,6 +4,7 @@ import Hero_bg from '../assets/bg_images/hero_bg.png'
 import Hero from '@/components/Hero'
 import Container from '@/components/Container'
 import Mission from '@/components/Mission'
+import Importance from '@/components/Importance'
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       
       <Container>
           <Mission />
-        
+          <Importance />
       </Container>
       
       
