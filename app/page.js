@@ -5,6 +5,7 @@ import Hero from '@/components/Hero'
 import Container from '@/components/Container'
 import Mission from '@/components/Mission'
 import Importance from '@/components/Importance'
+import Participation from '@/components/Participation'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Container>
           <Mission />
           <Importance />
+          <Participation />
       </Container>
       
       
