@@ -20,7 +20,7 @@ export function ImportanceCarousel({cardArr = []}) {
   )
   return (
     <Carousel
-      className='w-full  '
+      className='w-full max-w-sm sm:max-w-none mx-auto'
       opts={{ loop: true,  align: "start"  }}
       plugins={[plugin.current]}
     >
