@@ -1,12 +1,12 @@
-import MainMenu from '@/components/Mainmenu'
-import Image from 'next/image'
-import Hero_bg from '../assets/bg_images/hero_bg.png'
+
 import Hero from '@/components/Hero'
 import Container from '@/components/Container'
 import Mission from '@/components/Mission'
 import Importance from '@/components/Importance'
 import Participation from '@/components/Participation'
 import Filter from '@/components/Filter'
+import Calender from '@/components/Calender'
+// import { Calendar } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -18,6 +18,7 @@ export default function Home() {
           <Importance />
           <Participation />
           <Filter />
+          <Calender />
       </Container>
       
       

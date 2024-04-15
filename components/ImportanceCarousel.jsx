@@ -16,7 +16,7 @@ import Card from './Card'
 
 export function ImportanceCarousel({cardArr = []}) {
   const plugin = React.useRef(
-      Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
+      Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })
   )
   return (
     <Carousel

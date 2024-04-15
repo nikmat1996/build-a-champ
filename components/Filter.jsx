@@ -56,7 +56,7 @@ const Filter = () => {
         <CustomSelect data={data.ageRange} />
         <CustomSelect data={data.sports} />
       </div>
-      <Button className="bg-green-300 px-[65px] py-2.5 leading-normal h-max text-xs md:text-lg hover:bg-[#FD8642] hover:opacity-75">Search</Button>
+      <Button className="bg-[#FD8642] px-[65px] py-2.5 leading-normal h-max  md:text-lg hover:bg-[#FD8642] hover:opacity-75">Search</Button>
     </section>
   )
 }
