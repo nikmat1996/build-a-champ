@@ -13,7 +13,7 @@ const Mission = () => {
   return (
     <section className='px-[15px] pt-[72px] md:pt-[104px] lg:px-0'>
       <div className='flex flex-col items-center w-full max-w-[1139px] mx-auto md:flex-row-reverse md:justify-between md:items-start'>
-        <Image src={mission_lg} className='hidden md:block translate-y-[19px]'/>
+        <Image src={mission_lg} className='hidden md:block translate-y-[19px] self-center'/>
         <Image src={mission_sm} className='md:hidden'/>
         <div className='w-full max-w-[629px]'>
             <div className='flex flex-row-reverse justify-center items-center md:flex-col md:items-start'>

@@ -50,7 +50,7 @@ const data = {
 
 const Filter = () => {
   return (
-    <section className='flex flex-col items-center gap-y-[30px] xl:flex-row gap-x-[43px] justify-center pb-10'>
+    <section className='flex flex-col items-center gap-y-[30px] xl:flex-row gap-x-[43px] justify-center pb-5'>
       <div className='flex gap-[15px] md:gap-[43px]'>
         <CustomSelect data={data.gender} />
         <CustomSelect data={data.ageRange} />

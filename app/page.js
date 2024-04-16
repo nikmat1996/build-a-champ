@@ -6,6 +6,8 @@ import Importance from '@/components/Importance'
 import Participation from '@/components/Participation'
 import Filter from '@/components/Filter'
 import Calender from '@/components/Calender'
+import Performance from '@/components/Performance'
+import Support from '@/components/Support'
 // import { Calendar } from 'lucide-react'
 
 export default function Home() {
@@ -19,7 +21,10 @@ export default function Home() {
           <Participation />
           <Filter />
           <Calender />
+          <Performance />
       </Container>
+
+      <Support />
       
       
     </main>
