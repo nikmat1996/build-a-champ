@@ -8,7 +8,7 @@ import Filter from '@/components/Filter'
 import Calender from '@/components/Calender'
 import Performance from '@/components/Performance'
 import Support from '@/components/Support'
-// import { Calendar } from 'lucide-react'
+import Subscribe from '@/components/Subscribe'
 
 export default function Home() {
   return (
@@ -22,9 +22,10 @@ export default function Home() {
           <Filter />
           <Calender />
           <Performance />
+          <Support />
+          <Subscribe />
       </Container>
 
-      <Support />
       
       
     </main>
