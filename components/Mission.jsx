@@ -13,11 +13,11 @@ const Mission = () => {
   return (
     <section className='px-[15px] pt-[72px] md:pt-[104px] lg:px-0'>
       <div className='flex flex-col items-center w-full max-w-[1139px] mx-auto md:flex-row-reverse md:justify-between md:items-start'>
-        <Image src={mission_lg} className='hidden md:block translate-y-[19px] self-center'/>
-        <Image src={mission_sm} className='md:hidden'/>
+        <Image src={mission_lg} alt='boy with ball large' className='hidden md:block translate-y-[19px] self-center'/>
+        <Image src={mission_sm} alt='boy with ball small' className='md:hidden'/>
         <div className='w-full max-w-[629px]'>
             <div className='flex flex-row-reverse justify-center items-center md:flex-col md:items-start'>
-                <Image src={mission} className='w-[43px] h-[43px] md:w-[93px] md:h-[93px]'/>
+                <Image src={mission} alt='gif image' className='w-[43px] h-[43px] md:w-[93px] md:h-[93px]'/>
                 <h2 className='text-2xl/9 font-bold pt-[12px] pb-2.5 md:text-[50px] md:leading-[57px] md:pb-[30px] translate-y-1'>{missionText.h2}</h2>
             </div>
             <p className='text-[15px] leading-5 md:text-xl/10'>{missionText.p}</p>

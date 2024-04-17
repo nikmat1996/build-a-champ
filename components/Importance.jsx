@@ -44,6 +44,7 @@ const Importance = () => {
           {importanceText.h2}
         </h2>
         <Image
+          alt='gif image'
           src={importance}
           className='h-[43px] w-[43px] rotate-90 md:h-[93px] md:w-[93px]'
         />

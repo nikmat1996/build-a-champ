@@ -7,7 +7,7 @@ const Container = ({ children }) => {
   return (
     <div className = "relative w-full overflow-hidden">
       <div className="absolute -z-10 inset-0">
-          <Image src={container_bg} className="w-full h-full"/>
+          <Image src={container_bg} alt='background image' className="w-full h-full"/>
         </div>
         {children}
     </div>

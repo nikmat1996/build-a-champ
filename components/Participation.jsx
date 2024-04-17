@@ -16,6 +16,7 @@ const Participation = () => {
           {participationText.h2}
         </h2>
         <Image
+          alt='clock gif'
           src={clockGif}
           className='h-[43px] w-[43px] md:h-[93px] md:w-[93px]'
         />
