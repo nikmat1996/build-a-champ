@@ -10,7 +10,7 @@ const supportText = {
 
 const Support = () => {
   return (
-    <section className='relative px-5'>
+    <section className='relative px-5' id='support'>
       <div className='absolute inset-0  -z-10'>
         <Image alt='bg image' src={support_bg} className='w-full h-full' />
       </div>

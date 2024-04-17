@@ -9,6 +9,7 @@ import Calender from '@/components/Calender'
 import Performance from '@/components/Performance'
 import Support from '@/components/Support'
 import Subscribe from '@/components/Subscribe'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -24,9 +25,8 @@ export default function Home() {
           <Performance />
           <Support />
           <Subscribe />
+          <Footer />
       </Container>
-
-      
       
     </main>
   )

@@ -10,7 +10,7 @@ const performanceText = {
 
 const Performance = () => {
   return (
-    <section className="pt-1.5 md:pt-20 px-5 pb-14 md:pb-28">
+    <section className="pt-1.5 md:pt-20 px-5 pb-14 md:pb-28" id="performance">
       <div className='flex flex-col items-center w-full max-w-[1139px] mx-auto md:flex-row-reverse md:justify-between md:items-start'>
         <Image alt="girl checking stats" src={performance_lg} className='hidden md:block  self-center w-full'/>
         <Image alt="girl checking stats small" src={performance_sm} className='md:hidden'/>

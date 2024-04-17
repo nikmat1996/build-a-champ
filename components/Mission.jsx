@@ -11,7 +11,7 @@ const missionText = {
 
 const Mission = () => {
   return (
-    <section className='px-[15px] pt-[72px] md:pt-[104px] lg:px-0'>
+    <section className='px-[15px] pt-[72px] md:pt-[104px] lg:px-0' id='mission'>
       <div className='flex flex-col items-center w-full max-w-[1139px] mx-auto md:flex-row-reverse md:justify-between md:items-start'>
         <Image src={mission_lg} alt='boy with ball large' className='hidden md:block translate-y-[19px] self-center'/>
         <Image src={mission_sm} alt='boy with ball small' className='md:hidden'/>

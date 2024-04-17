@@ -38,7 +38,7 @@ const importanceText = {
 
 const Importance = () => {
   return (
-    <section className='px-[15px]  py-[44px] md:pt-[130px] mt-[19px] lg:px-0'>
+    <section className='px-[15px]  py-[44px] md:pt-[130px] mt-[19px] lg:px-0' id='importance'>
       <div className='mb-7 flex items-center justify-center md:mb-14'>
         <h2 className='text-[25px] font-bold leading-[38px]  md:text-[50px] md:leading-[57px] '>
           {importanceText.h2}

@@ -10,7 +10,7 @@ const participationText = {
 
 const Participation = () => {
   return (
-    <section className='px-5 pb-[25px] md:pb-[55px]'>
+    <section className='px-5 pb-[25px] md:pb-[55px]' id='participation'>
       <div className='flex items-center justify-center  md:flex-row-reverse md:gap-2 md:pt-16 '>
         <h2 className='text-[25px] font-bold leading-[38px]  md:text-[50px] md:leading-[57px] '>
           {participationText.h2}
