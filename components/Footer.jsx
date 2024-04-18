@@ -28,7 +28,7 @@ export const links = [
 
 const Footer = () => {
   return (
-    <footer className='px-5 py-20 pt-10 md:pt-0'>
+    <footer className='px-5 py-20 pb-10 pt-10 md:pt-0'>
       <div className='w-full max-w-[1139px] mx-auto'>
         <div className='flex flex-col  md:flex-row '>
           <div className='basis-[210px]'>
