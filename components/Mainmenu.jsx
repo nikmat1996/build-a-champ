@@ -46,7 +46,7 @@ const MainMenu = () => {
              
 
                 <div className='p-10 text-orange-300 space-y-5'>
-                  {links.map(link => <button id={link.id} onClick={() => handleClick(link.id)}>{link.text + " " + link.text2}</button>)}
+                  {links.map(link => <button key={link.id} onClick={() => handleClick(link.id)}>{link.text + " " + link.text2}</button>)}
                   
                 </div>
             </DrawerContent>
