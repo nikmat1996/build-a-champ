@@ -5,6 +5,10 @@ import { Drawer, DrawerClose, DrawerContent, DrawerTrigger } from './ui/drawer'
 import { MenuIcon } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { links } from './Footer'
+import footerLogo from '@/assets/icons/footerLogo.png'
+import Image from 'next/image'
+import { twMerge } from 'tailwind-merge'
 
 const MainMenu = () => {
   const isDesktop = useMediaQuery('(min-width: 768px)')
@@ -12,11 +16,61 @@ const MainMenu = () => {
   const router = useRouter()
   const handleClick = () => {
     console.log('clicked')
-    router.push('/dashboard')
+    router.push('#subscribe')
   }
 
-  return isDesktop ? (
-    <nav className='p-8 py-10 bg-transparent'>Desktop <br/> Second</nav>
+  return (
+    <header className='flex px-1'>
+      {!isDesktop && <div className=' flex items-center pl-4'>
+        {/* <Image src={footerLogo} alt='logo' className='bg-transparent' /> */}
+         
+          <Drawer direction='left'>
+            <DrawerTrigger>
+              <MenuIcon />
+            </DrawerTrigger>
+            <DrawerContent className='right-0 top-0 mt-0 h-full w-screen max-w-80 rounded-l-none rounded-r-2xl'>
+              
+              {/* <DrawerClose onClick={handleClick}>
+                <p>hello</p>
+              </DrawerClose> */}
+              <Link href="#subscribe">subscribe</Link>
+            </DrawerContent>
+          </Drawer>
+        
+      </div>}
+      <nav className='flex  flex-1 justify-center py-6 '>
+        <ul className='flex w-full max-w-[915px] items-center justify-between  text-center text-[17px] font-normal leading-[20px] text-gray-800 md:text-[21px]  md:leading-[27px]'>
+          
+          {isDesktop &&
+            links.map(link => (
+              <li key={link.id} className=''>
+                <a href={`#${link.id}`} className='hover:text-orange-900'>
+                  <p>{link.text}</p>
+                  <p>{link.text2}</p>
+                </a>
+              </li>
+            ))}
+          
+          <li className={twMerge("", !isDesktop && "ml-auto pr-4")}>
+            <a
+              href='#subscribe'
+              className='rounded border border-gray-800 p-2 hover:border-orange-900 hover:text-orange-900 text-sm md:text-[21px]  md:leading-[27px]'
+            >
+              Subscribe
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </header>
+  )
+
+  return
+
+  isDesktop ? (
+    <nav className='bg-transparent p-8 py-10'>
+      Desktop <br /> Second
+    </nav>
   ) : (
     <Drawer direction='left'>
       <DrawerTrigger>

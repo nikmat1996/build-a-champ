@@ -18,7 +18,7 @@ const footerText = {
   phone: '044-1234567'
 }
 
-const links = [
+export const links = [
   { id: 'mission', text: 'Our', text2: "Mission" },
   { id: 'importance', text: 'Importance', text2: "of Sports" },
   { id: 'participation', text: 'Events', text2: "Participation" },
@@ -46,11 +46,11 @@ const Footer = () => {
               </a>
             </address>
           </div>
-          <nav className='flex-1  pt-7 xl:px-16 md:pt-6 flex flex-col items-center justify-center'>
+          <nav className='flex-1  pt-7 lg:px-16 md:pt-6 flex flex-col items-center justify-center'>
             <ul className='text-[13px] w-full flex leading-[17px] md:text-[21px] md:leading-[27px] font-light flex-wrap gap-y-12 '>
               {links.map(link => (
                 <li key={link.id} className='w-1/3 shrink-0  '>
-                  <a href={`#${link.id}`} className='max-w-min'><p>{link.text}</p><p>{link.text2}</p></a>
+                  <a href={`#${link.id}`} className='hover:text-orange-900'><p>{link.text}</p><p>{link.text2}</p></a>
                 </li>
               ))}
             </ul>

@@ -9,7 +9,7 @@ const subscriptionText = {
 
 const Subscribe = () => {
   return (
-    <section className='py-12 pt-12 md:pt-32 '>
+    <section className='py-12 pt-12 md:pt-32 ' id='subscribe'>
       <div className=' md:py-20  relative px-5'>
         <div className='absolute inset-0 md:bg-violet-200 md:opacity-20 -z-10'></div>
         <div className='flex justify-center gap-5'>
