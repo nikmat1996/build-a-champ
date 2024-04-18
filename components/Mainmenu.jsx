@@ -9,14 +9,24 @@ import { links } from './Footer'
 import footerLogo from '@/assets/icons/footerLogo.png'
 import Image from 'next/image'
 import { twMerge } from 'tailwind-merge'
+import { useState } from 'react'
 
 const MainMenu = () => {
+
   const isDesktop = useMediaQuery('(min-width: 768px)')
-  console.log(isDesktop)
   const router = useRouter()
-  const handleClick = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+
+  console.log(isDesktop)
+
+  const handleClick = (id) => {
     console.log('clicked')
-    router.push('#subscribe')
+    setIsOpen(false)
+    setTimeout(() => {
+      router.push(`#${id}`)
+
+    }, 350)
   }
 
   return (
@@ -24,7 +34,7 @@ const MainMenu = () => {
       {!isDesktop && <div className=' flex items-center pl-4'>
         {/* <Image src={footerLogo} alt='logo' className='bg-transparent' /> */}
          
-          <Drawer direction='left'>
+          <Drawer direction='left'  open={isOpen} onOpenChange={setIsOpen}>
             <DrawerTrigger>
               <MenuIcon />
             </DrawerTrigger>
@@ -33,7 +43,12 @@ const MainMenu = () => {
               {/* <DrawerClose onClick={handleClick}>
                 <p>hello</p>
               </DrawerClose> */}
-              <div className='p-10 text-orange-300'>Side Nav</div>
+             
+
+                <div className='p-10 text-orange-300 space-y-5'>
+                  {links.map(link => <button id={link.id} onClick={() => handleClick(link.id)}>{link.text + " " + link.text2}</button>)}
+                  
+                </div>
             </DrawerContent>
           </Drawer>
         
