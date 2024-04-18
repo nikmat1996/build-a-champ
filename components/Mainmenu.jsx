@@ -33,7 +33,7 @@ const MainMenu = () => {
               {/* <DrawerClose onClick={handleClick}>
                 <p>hello</p>
               </DrawerClose> */}
-              <Link href="#subscribe">subscribe</Link>
+              <div className='p-10 text-orange-300'>Side Nav</div>
             </DrawerContent>
           </Drawer>
         
