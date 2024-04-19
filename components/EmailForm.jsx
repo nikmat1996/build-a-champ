@@ -1,20 +1,32 @@
-import React from 'react';
-import { useToast } from "@/components/ui/use-toast";
-import Image from 'next/image';
-import mailIcon from '@/assets/icons/mailIcon.svg';
-import { SubmitButton } from './SubmitButton';
+import React from 'react'
+import { useToast } from '@/components/ui/use-toast'
+import Image from 'next/image'
+import mailIcon from '@/assets/icons/mailIcon.svg'
+import { SubmitButton } from './SubmitButton'
+
+
 
 const EmailForm = () => {
-
-    // const { toast } = useToast()
+  // const { toast } = useToast()
 
   return (
-    <form className='flex flex-col md:flex-row gap-x-6 gap-y-[30px] justify-center items-center'>
+    <form className='flex flex-col items-center justify-center gap-x-6 gap-y-[30px] md:flex-row'>
       <div className=' relative'>
-        <input type='text' name='email' id='email' className='pl-12 md:pl-16 h-full rounded-[7px] md:rounded-[10px] outline-teal-300 w-screen max-w-[294px] md:max-w-[421px] py-4 md:py-[23px] text-xs md:text-sm'/>
-        <Image src={mailIcon} alt='mail icon' className='w-[14px] md:w-[21px] absolute top-1/2 -translate-y-1/2 ml-5 pointer-events-none' />
-        </div>
-        <SubmitButton />
+        <input
+          type='text'
+          name='email'
+          id='email'
+          placeholder='Your email'
+          className='h-full w-screen max-w-[294px] rounded-[7px] py-4 pl-12 text-xs outline-teal-300 md:max-w-[421px] md:rounded-[10px] md:py-[23px] md:pl-16 md:text-sm'
+        />
+        <Image
+          src={mailIcon}
+          alt='mail icon'
+          className='pointer-events-none absolute top-1/2 ml-5 w-[14px] -translate-y-1/2 md:w-[21px]'
+        />
+      </div>
+      <SubmitButton />
+      <p aria-live=''></p>
     </form>
   )
 }

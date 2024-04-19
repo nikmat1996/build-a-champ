@@ -56,13 +56,13 @@ const Footer = () => {
             </ul>
           </nav>
           <div className='flex gap-7 justify-center pt-14 md:pt-20'>
-            <Button size='icon' className='rounded-full bg-white'>
+            <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
               <Facebook color='black' size={15} />
             </Button>
-            <Button size='icon' className='rounded-full bg-white'>
+            <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
               <Instagram color='black' size={15} />
             </Button>
-            <Button size='icon' className='rounded-full bg-white '>
+            <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
               <Twitter color='black' size={15} />
             </Button>
           </div>
