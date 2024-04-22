@@ -8,22 +8,13 @@ import {
     add,
     addMonths,
     eachDayOfInterval,
-    eachMonthOfInterval,
     endOfMonth,
-    endOfWeek,
     format,
     getDay,
-    isEqual,
-    isSameDay,
-    isSameMonth,
     isToday,
-    parse,
-    parseISO,
     startOfMonth,
     startOfToday,
-    startOfWeek,
   } from 'date-fns'
-import { Button } from "./ui/button";
 import Image from "next/image";
 
 let colStartClasses = [
@@ -47,7 +38,8 @@ const Calender = () => {
         end: endOfMonth(firstDaySelectedMonth),
     });
 
-    console.log(selectedDay)
+    console.log("selectedDay", selectedDay)
+    console.log("current Time", new Date(Date.now()).toLocaleString())
 
     const handleChangeMonth = (delta) => {
         const result = addMonths(firstDaySelectedMonth, delta);

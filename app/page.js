@@ -10,24 +10,27 @@ import Performance from '@/components/Performance'
 import Support from '@/components/Support'
 import Subscribe from '@/components/Subscribe'
 import Footer from '@/components/Footer'
+import { Suspense, lazy } from 'react';
+
 
 export default function Home() {
   return (
     <main className=''>
       <Hero />
-      
       <Container>
           <Mission />
           <Importance />
           <Participation />
           <Filter />
-          <Calender />
+          <Suspense fallback={<div>loading</div>} >
+            <Calender />
+          </Suspense>
+          {/* <Calender /> */}
           <Performance />
           <Support />
           <Subscribe />
           <Footer />
       </Container>
-      
     </main>
   )
 }
