@@ -1,16 +1,41 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useRef } from 'react'
 import { useToast } from '@/components/ui/use-toast'
 import Image from 'next/image'
 import mailIcon from '@/assets/icons/mailIcon.svg'
 import { SubmitButton } from './SubmitButton'
+import { useFormState } from 'react-dom';
+import { subscribe } from '@/app/_actions'
 
 
 
 const EmailForm = () => {
-  // const { toast } = useToast()
+
+  const { toast } = useToast()
+  const [state, action] = useFormState(subscribe, null)
+  const formRef = useRef()
+
+  useEffect(() => {
+    if(state?.error){
+      // formRef.current.reset()
+      toast({
+        title: "Oops! ",
+        description: state.error.email,
+      })
+    }
+
+    if(state?.data){
+      formRef.current.reset()
+      toast({
+        title: "Success! ",
+        description: state.data.email + " subscribed to news letter!",
+      })
+    }
+  }, [state])
 
   return (
-    <form className='flex flex-col items-center justify-center gap-x-6 gap-y-[30px] md:flex-row'>
+    <form ref={formRef} action={action} className='flex flex-col items-center justify-center gap-x-6 gap-y-[30px] md:flex-row'>
       <div className=' relative'>
         <input
           type='text'
@@ -26,7 +51,7 @@ const EmailForm = () => {
         />
       </div>
       <SubmitButton />
-      <p aria-live=''></p>
+      <p aria-live='polite' className="sr-only">{state?.error?.email}</p>
     </form>
   )
 }
