@@ -31,7 +31,9 @@ let colStartClasses = [
 const Calender = async (props) => {
 
     const { sports, ageRange, gender } = props;
-    let today = startOfToday();
+    let tod = startOfToday();
+    const [today, setToday] = useState(tod);
+    
     let [count, setCount] = useState(0);
 
     console.log(sports, ageRange, gender)
