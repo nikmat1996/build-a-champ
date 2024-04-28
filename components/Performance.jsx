@@ -5,7 +5,7 @@ import performance from '../assets/gifs/performance.gif'
 
 const performanceText = {
     h2: "Performance stats",
-    p: "Build a Champ's performance statistics provide kids with valuable insights into their athletic performance and help them take their skills to the next level."
+    p: "Coming soon to Build A Champ: Track your progress and elevate your game with our real-time performance stats! Hone your skills and see how you stack up against the competition. It's not just about playing—it’s about improving every day and mastering your sport!"
 }
 
 const Performance = () => {

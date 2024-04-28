@@ -9,28 +9,43 @@ const importanceText = {
   h2: 'Importance of sports',
   cards: [
     {
-      h3: 'Mental Resilience: How Sports Foster Perseverance and Emotional Well-Being',
-      p: 'Sports also play a significant role in mental health, providing an outlet for stress relief and promoting emotional well-being. By engaging in physical activity, kids release endorphins, elevating mood and reducing feelings of anxiety and depression. Furthermore, sports teach resilience and perseverance, as athletes learn to overcome challenges, setbacks, and failures with determination and grit.',
+      h3: 'Mood Magic 🌟',
+      p: 'Sports are like a happiness potion—splash in some action, stir in some excitement, and voila! Watch the blues wave goodbye faster than a sprinter on track day. They pump up those smile-inducing endorphins and knock stress out of the park.',
       img: cardImg
     },
     {
-      h3: 'Mental Resilience: How Sports Foster Perseverance and Emotional Well-Being',
-      p: 'Sports also play a significant role in mental health, providing an outlet for stress relief and promoting emotional well-being. By engaging in physical activity, kids release endorphins, elevating mood and reducing feelings of anxiety and depression. Furthermore, sports teach resilience and perseverance, as athletes learn to overcome challenges, setbacks, and failures with determination and grit.',
+      h3: 'Team Spirit Extravaganza 🎉',
+      p: "Imagine sports as teamwork bootcamp. Here, ‘teamwork’ isn’t just a buzzword; it’s about passing the ball, sharing high-fives, and sometimes, even sharing victory snacks. It's where future besties meet, and parents get to snag cool action shots of their champs!",
       img: cardImg
     },
     {
-      h3: 'Mental Resilience: How Sports Foster Perseverance and Emotional Well-Being',
-      p: 'Sports also play a significant role in mental health, providing an outlet for stress relief and promoting emotional well-being. By engaging in physical activity, kids release endorphins, elevating mood and reducing feelings of anxiety and depression. Furthermore, sports teach resilience and perseverance, as athletes learn to overcome challenges, setbacks, and failures with determination and grit.',
+      h3: 'Brain Gym 🧠💪',
+      p: "Who says workouts are just for bodies? Sports sharpen your brain too! They jazz up your reaction times and buff up your problem-solving skills. Think of it as a mental circuit training that preps you to ace those tricky school tests and real-world puzzles.",
       img: cardImg
     },
     {
-      h3: 'Mental Resilience: How Sports Foster Perseverance and Emotional Well-Being',
-      p: 'Sports also play a significant role in mental health, providing an outlet for stress relief and promoting emotional well-being. By engaging in physical activity, kids release endorphins, elevating mood and reducing feelings of anxiety and depression. Furthermore, sports teach resilience and perseverance, as athletes learn to overcome challenges, setbacks, and failures with determination and grit.',
+      h3: "Confidence Fireworks 🎆",
+      p: "Every score and goal is a confidence booster rocket, launching self-esteem to new heights. Sports show you that yes, you can shoot, score, and even soar beyond the stars with persistence and courage.",
       img: cardImg
     },
     {
-      h3: 'Mental Resilience: How Sports Foster Perseverance and Emotional Well-Being',
-      p: 'Sports also play a significant role in mental health, providing an outlet for stress relief and promoting emotional well-being. By engaging in physical activity, kids release endorphins, elevating mood and reducing feelings of anxiety and depression. Furthermore, sports teach resilience and perseverance, as athletes learn to overcome challenges, setbacks, and failures with determination and grit.',
+      h3: "Fitness Fiesta 🏋️‍♂️",
+      p: "Get ready to flex those muscles and flaunt that fitness! Engaging in sports turns you into the healthiest version of yourself—faster, stronger, and ready to zoom past any laziness. Plus, sweating it out has never been more exhilarating!",
+      img: cardImg
+    },
+    {
+      h3: "Friend-zy Vibes 🎈",
+      p: "Sports are the ultimate social network, minus the screens. They’re about fist bumps, teamwork, and friendships that could last a lifetime. It's the perfect place for kids to mingle and parents to kindle new friendships with some fan cheering on the side.",
+      img: cardImg
+    },
+    {
+      h3: "Stress Smash 🎾",
+      p: "Feeling wound up? Sports are your go-to stress smashers. Nothing beats the thrill of the game in melting away worries. It’s all about the rush, the plays, and the sheer joy of the game. Why stress when you can press play on play?",
+      img: cardImg
+    },
+    {
+      h3: "Champion’s Classroom 🏆",
+      p: "Winning is awesome, but sports offer more than just trophies. They’re about learning the ropes of both triumph and loss. It’s where you learn to play fair, swing back from setbacks, and wear both victory and defeat with pride, all invaluable lessons off the field.",
       img: cardImg
     }
   ]

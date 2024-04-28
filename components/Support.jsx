@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const supportText = {
     h2: "A Champion needs a champion support system",
-    p: "Build a Champ is designed to provide a comprehensive and integrated solution for parents, schools, and other stakeholders to work together to support the athletic development of kids, ensuring that they are highly motivated and engaged at every stage of their journey."
+    p: "At Build A Champ, we bring together parents, schools, and sports communities to create a robust support network for young athletes. This comprehensive system ensures that every participant is motivated, supported, and engaged throughout their sporting journey, from initial interest to achieving their personal best."
 }
 
 const Support = () => {

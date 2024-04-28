@@ -4,7 +4,7 @@ import clockGif from '../assets/gifs/clock.gif'
 
 const participationText = {
   h2: "Events participation",
-  p1: "Through Build a Champ, kids have the opportunity to participate in exciting in-person events and competitions, which provide them with the opportunities to learn, grow, and compete, as well as gain valuable experience and make new friends.",
+  p1: "Ready, set, go! Dive into our event calendar to pick your next challenge. Filter by age, location, and type to find the perfect competitions and training sessions. Whether you’re here to break records or make friends, let’s play this game together!",
   p2: 'Build a Champ also provides access to training and development events, where kids can receive expert instruction, learn new skills and techniques, and refine their athletic abilities. '
 }
 
@@ -21,22 +21,21 @@ const Participation = () => {
           className='h-[43px] w-[43px] md:h-[93px] md:w-[93px]'
         />
       </div>
-      <div className='mx-auto space-y-2 pt-0.5 md:pt-3 '>
-        <p className=' text-[15px] leading-5 md:hidden text-center'>
+        <p className='w-full max-w-[1139px] mx-auto text-[15px] leading-5 md:text-xl/7 text-center pt-0.5 md:pt-3'>
           {participationText.p1}
         </p>
-        <p className='text-[15px] leading-5 md:hidden text-center'>
+        {/* <p className='text-[15px] leading-5 md:hidden text-center'>
           {participationText.p2}
-        </p>
-        <p className=' w-full max-w-[1139px] text-center text-xl text-black mx-auto hidden md:block'>
+        </p> */}
+        {/* <p className=' w-full max-w-[1139px] text-center  text-black mx-auto hidden md:block'>
           <span className=' w-full max-w-[1139px] text-center text-xl text-black'>
             Through Build a Champ, kids have the opportunity to participate in
-            exciting in-person events{' '}
+            exciting in-person events
           </span>
           <br />
           <span className=' w-full max-w-[1139px] text-center text-xl text-black'>
             and competitions, which provide them with the opportunities to
-            learn, grow,{' '}
+            learn, grow,
           </span>
           <br />
           <span className=' w-full max-w-[1139px] text-center text-xl text-black'>
@@ -46,15 +45,13 @@ const Participation = () => {
           <br />
           <span className=' w-full max-w-[1139px] text-center text-xl text-black pt-5 block'>
             Build a Champ also provides access to training and development
-            events, where kids can{' '}
+            events, where kids can
           </span>
-          {/* <br /> */}
           <span className=' w-full max-w-[1139px] text-center text-xl text-black'>
             receive expert instruction, learn new skills and techniques, and
             refine their athletic abilities.
           </span>
-        </p>
-      </div>
+        </p> */}
     </section>
   )
 }

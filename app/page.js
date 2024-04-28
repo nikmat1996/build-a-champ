@@ -13,7 +13,7 @@ import Footer from '@/components/Footer'
 import { Suspense, lazy } from 'react';
 
 
-export default function Home() {
+export default function Home({ searchParams }) {
   return (
     <main className=''>
       <Hero />
@@ -23,7 +23,7 @@ export default function Home() {
           <Participation />
           <Filter />
           <Suspense fallback={<div>loading</div>} >
-            <Calender />
+            <Calender sports={searchParams.sports} ageRange={searchParams.ageRange} gender={searchParams.gender}/>
           </Suspense>
           {/* <Calender /> */}
           <Performance />

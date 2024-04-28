@@ -11,11 +11,11 @@ import footerLogo from '@/assets/icons/footerLogo.png'
 import { Button } from './ui/button'
 
 const footerText = {
-  p1: 'The premier digital platform for sports development in kids!',
+  p1: 'Discover your inner champion and have a blast along the way!',
   p2: 'All rights reserved@buidachamp.com',
-  email: 'buildachamp@gmail.com',
-  phoneDummy: '044-1234567',
-  phone: '044-1234567'
+  email: ' team@buildachamp.com',
+  phoneDummy: '+91-9884240039',
+  phone: '+91-9884240039'
 }
 
 export const links = [
@@ -62,9 +62,9 @@ const Footer = () => {
             <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
               <Instagram color='black' size={15} />
             </Button>
-            <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
+            {/* <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
               <Twitter color='black' size={15} />
-            </Button>
+            </Button> */}
           </div>
         </div>
         <p className='text-[10px] leading-3 md:text-sm md:leading-[18px] text-center py-4'>All rights reserved@buidachamp.com</p>
