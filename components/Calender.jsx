@@ -28,7 +28,7 @@ let colStartClasses = [
     "col-start-7",
 ];
 
-const Calender = async(props) => {
+const Calender = async (props) => {
 
     const { sports, ageRange, gender } = props;
     let today = startOfToday();

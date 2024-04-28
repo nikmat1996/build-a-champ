@@ -54,14 +54,14 @@ const importanceText = {
 const Importance = () => {
   return (
     <section className='px-[15px]  py-[44px] md:pt-[130px] mt-[19px] lg:px-0' id='importance'>
-      <div className='mb-7 flex items-center justify-center md:mb-14'>
+      <div className='mb-7 flex items-center justify-center md:mb-14 gap-x-3'>
         <h2 className='text-[25px] font-bold leading-[38px]  md:text-[50px] md:leading-[57px] '>
           {importanceText.h2}
         </h2>
         <Image
           alt='gif image'
           src={importance}
-          className='h-[43px] w-[43px] rotate-90 md:h-[93px] md:w-[93px]'
+          className='h-[43px] w-[43px] rotate-90 md:h-[79px] md:w-[79px]'
         />
       </div>
       <div className='mx-auto w-full max-w-[1303px]  px-0 md:px-20'>

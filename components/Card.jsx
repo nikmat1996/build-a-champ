@@ -5,7 +5,7 @@ import card from "@/assets/images/cardImg_bg.png"
 
 const Card = ({ data }) => {
   return (
-    <div className='w-full bg-white rounded-xl'>
+    <div className='w-full bg-white rounded-xl h-full'>
         {/* <Image src={data.img} className='w-full'/> */}
         <div className='w-full max-h-[190px] overflow-hidden rounded-t-xl'>
             <Image src={card} alt='card image' className='w-full scale-110 object-top'/>
