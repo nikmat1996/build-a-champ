@@ -56,3 +56,11 @@ export async function saveContact(state, formData){
     }
 
 }
+
+export async function getData(sports, ageRange, gender, dateStr){
+    return {
+        data: {
+            sports, ageRange, gender, dateStr
+        }
+    }
+}

@@ -17,7 +17,7 @@ import {
     startOfToday,
   } from 'date-fns'
 import Image from "next/image";
-import { cookies } from "next/headers";
+import { getData } from "@/app/_actions";
 
 let colStartClasses = [
     "",
@@ -31,12 +31,13 @@ let colStartClasses = [
 
 const Calender = async (props) => {
 
-    cookies()
     const { sports, ageRange, gender } = props;
-    let tod = startOfToday();
-    const [today, setToday] = useState(tod);
+    let today = startOfToday();
+//    const { data } =  await getData(sports, ageRange, gender)
+    // const [today, setToday] = useState(tod);
     
     let [count, setCount] = useState(0);
+    // let count = 0;
 
     console.log(sports, ageRange, gender)
     let months = eachMonthOfInterval({
