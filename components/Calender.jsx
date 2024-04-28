@@ -17,6 +17,7 @@ import {
     startOfToday,
   } from 'date-fns'
 import Image from "next/image";
+import { cookies } from "next/headers";
 
 let colStartClasses = [
     "",
@@ -30,6 +31,7 @@ let colStartClasses = [
 
 const Calender = async (props) => {
 
+    cookies()
     const { sports, ageRange, gender } = props;
     let tod = startOfToday();
     const [today, setToday] = useState(tod);
