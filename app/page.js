@@ -11,9 +11,11 @@ import Support from '@/components/Support'
 import Subscribe from '@/components/Subscribe'
 import Footer from '@/components/Footer'
 import { Suspense, lazy } from 'react';
+import { cookies } from 'next/headers'
 
 
 export default function Home({ searchParams }) {
+  cookies()
   return (
     <main className=''>
       <Hero />
