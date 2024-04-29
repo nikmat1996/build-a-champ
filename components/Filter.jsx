@@ -40,6 +40,7 @@ const data = {
     options: [
       // { value: 'none', label: 'All' },
       { value: 'football', label: 'Football' },
+      { value: 'badminton', label: 'Badminton' },
       { value: 'basketball', label: 'Basketball' },
       { value: 'soccer', label: 'Soccer' },
       { value: 'tennis', label: 'Tennis' },

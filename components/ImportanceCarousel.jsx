@@ -31,8 +31,8 @@ export function ImportanceCarousel({cardArr = []}) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className= "border-[#FCA76B] h-7 w-7 -translate-y-7 md:h-14 md:w-14 left-0 md:-left-20" customIcon={<Image src={leftArrow} alt='left icon'/>}/>
-      <CarouselNext className= "border-[#FCA76B] h-7 w-7 -translate-y-7 md:h-14 md:w-14 right-0 md:-right-20" customIcon={<Image src={rightArrow} alt='right icon'/>}/>
+      <CarouselPrevious className= "border-0 h-7 w-7  md:h-14 md:w-14 left-0 md:-left-20" customIcon={<Image src={leftArrow} alt='left icon'/>}/>
+      <CarouselNext className= "border-0 h-7 w-7  md:h-14 md:w-14 right-0 md:-right-20" customIcon={<Image src={rightArrow} alt='right icon'/>}/>
     </Carousel>
   )
 }
