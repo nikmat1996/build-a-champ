@@ -13,7 +13,7 @@ import { Button } from './ui/button'
 const footerText = {
   p1: 'Discover your inner champion and have a blast along the way!',
   p2: 'All rights reserved@buidachamp.com',
-  email: ' team@buildachamp.com',
+  email: 'buildachamp@gmail.com',
   phoneDummy: '+91-9884240039',
   phone: '+91-9884240039'
 }
@@ -46,7 +46,7 @@ const Footer = () => {
               </a>
             </address>
           </div>
-          <nav className='flex-1  pt-7 lg:px-16 md:pt-6 flex flex-col items-center justify-center'>
+          <nav className='flex-1  pt-7 lg:px-16 md:pt-6 md:px-6 flex flex-col items-center justify-center lg:translate-x-20'>
             <ul className='text-[13px] w-full flex leading-[17px] md:text-[21px] md:leading-[27px] font-light flex-wrap gap-y-12 '>
               {links.map(link => (
                 <li key={link.id} className='w-1/3 shrink-0  '>
@@ -55,17 +55,17 @@ const Footer = () => {
               ))}
             </ul>
           </nav>
-          <div className='flex gap-7 justify-center pt-14 md:pt-20'>
-            <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
-              <Facebook color='black' size={15} />
-            </Button>
-            <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
-              <Instagram color='black' size={15} />
-            </Button>
-            {/* <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
-              <Twitter color='black' size={15} />
-            </Button> */}
-          </div>
+        </div>
+        <div className='flex gap-7 justify-center pt-6 md:pt-0'>
+          <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
+            <Facebook color='black' size={15} />
+          </Button>
+          <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
+            <Instagram color='black' size={15} />
+          </Button>
+          {/* <Button size='icon' className='rounded-full bg-white hover:bg-white hover:opacity-75'>
+            <Twitter color='black' size={15} />
+          </Button> */}
         </div>
         <p className='text-[10px] leading-3 md:text-sm md:leading-[18px] text-center py-4'>All rights reserved@buidachamp.com</p>
       </div>

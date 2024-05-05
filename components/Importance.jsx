@@ -2,6 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import importance from '../assets/gifs/importance.gif'
 import cardImg from '../assets/images/card.png'
+import moodMagic from '../assets/images/moodMagic.jpeg'
+import teamSpirit from '../assets/images/teamSpirit.jpeg'
+import brainGym from '../assets/images/brainGym.jpeg'
+import confidenceFireworks from '../assets/images/confidenceFireworks.jpeg'
+import fitnessFiesta from '../assets/images/fitnessFiesta.jpeg'
+// import moodMagic from '../assets/images/moodMagic.jpeg'
 import { ImportanceCarousel } from './ImportanceCarousel'
 // /Users/nm/Documents/code/proj/build-a-champ/assets/images/card.png
 
@@ -11,27 +17,27 @@ const importanceText = {
     {
       h3: 'Mood Magic 🌟',
       p: 'Sports are like a happiness potion—splash in some action, stir in some excitement, and voila! Watch the blues wave goodbye faster than a sprinter on track day. They pump up those smile-inducing endorphins and knock stress out of the park.',
-      img: cardImg
+      img: moodMagic
     },
     {
       h3: 'Team Spirit Extravaganza 🎉',
       p: "Imagine sports as teamwork bootcamp. Here, ‘teamwork’ isn’t just a buzzword; it’s about passing the ball, sharing high-fives, and sometimes, even sharing victory snacks. It's where future besties meet, and parents get to snag cool action shots of their champs!",
-      img: cardImg
+      img: teamSpirit
     },
     {
       h3: 'Brain Gym 🧠💪',
       p: "Who says workouts are just for bodies? Sports sharpen your brain too! They jazz up your reaction times and buff up your problem-solving skills. Think of it as a mental circuit training that preps you to ace those tricky school tests and real-world puzzles.",
-      img: cardImg
+      img: brainGym
     },
     {
       h3: "Confidence Fireworks 🎆",
       p: "Every score and goal is a confidence booster rocket, launching self-esteem to new heights. Sports show you that yes, you can shoot, score, and even soar beyond the stars with persistence and courage.",
-      img: cardImg
+      img: confidenceFireworks
     },
     {
       h3: "Fitness Fiesta 🏋️‍♂️",
       p: "Get ready to flex those muscles and flaunt that fitness! Engaging in sports turns you into the healthiest version of yourself—faster, stronger, and ready to zoom past any laziness. Plus, sweating it out has never been more exhilarating!",
-      img: cardImg
+      img: fitnessFiesta
     },
     {
       h3: "Friend-zy Vibes 🎈",
@@ -54,7 +60,7 @@ const importanceText = {
 const Importance = () => {
   return (
     <section className='px-[15px]  py-[44px] md:pt-[130px] mt-[19px] lg:px-0' id='importance'>
-      <div className='mb-7 flex items-center justify-center md:mb-14 gap-x-3'>
+      <div className='mb-5 flex items-center justify-center md:mb-14 gap-x-3'>
         <h2 className='text-[25px] font-bold leading-[38px]  md:text-[50px] md:leading-[57px] '>
           {importanceText.h2}
         </h2>

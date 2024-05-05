@@ -23,7 +23,6 @@ import {
 } from 'date-fns'
 import Image from 'next/image'
 import { Dialog, DialogContent, DialogHeader } from './ui/dialog'
-// import { getData } from '@/app/_actions'
 
 let colStartClasses = [
   '',
@@ -36,10 +35,9 @@ let colStartClasses = [
 ]
 
 const Calender = props => {
+  
   const { sports, ageRange, gender } = props
   let startToday = startOfToday()
-  //    const { data } =  await getData(sports, ageRange, gender)
-  // const [today, setToday] = useState(tod);
   const [today, setToday] = useState(startToday);
   let [count, setCount] = useState(0)
   const [events, setEvents] = useState([]);
@@ -247,14 +245,14 @@ const Calender = props => {
                   <path
                     d="M5.49978 7.57536C6.61717 7.57536 7.52299 6.66954 7.52299 5.55215C7.52299 4.43475 6.61717 3.52893 5.49978 3.52893C4.38239 3.52893 3.47656 4.43475 3.47656 5.55215C3.47656 6.66954 4.38239 7.57536 5.49978 7.57536Z"
                     stroke="#84829A"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                   <path
                     d="M9.54643 7.57545C8.02902 11.1161 5.5 15.1625 5.5 15.1625C5.5 15.1625 2.97098 11.1161 1.45357 7.57545C-0.0638427 4.03482 2.46518 1 5.5 1C8.53482 1 11.0638 4.03482 9.54643 7.57545Z"
                     stroke="#84829A"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
                 <p className="w-full max-w-[197px] text-xs font-light text-left text-[#84829a]">

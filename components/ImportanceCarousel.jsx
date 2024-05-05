@@ -27,7 +27,7 @@ export function ImportanceCarousel({cardArr = []}) {
       <CarouselContent className='-ml-5'>
         {cardArr.map((card, index) => (
           <CarouselItem key={index} className='sm:basis-1/2 lg:basis-1/3 pl-5 '>
-            <Card data={card} />
+            <Card data={card} defaultStyle={index >= 4}/>
           </CarouselItem>
         ))}
       </CarouselContent>

@@ -5,14 +5,13 @@ import { links } from './Footer'
 import header_logo from '@/assets/icons/header_logo.png'
 import headerLogo_sm from '@/assets/icons/headerLogo_sm.png'
 import Image from 'next/image'
-import { twMerge } from 'tailwind-merge'
 
 const MainMenu = () => {
 
   return (
-    <header className=' px-1'>
+    <header className=' px-1 w-full max-w-[1440px]'>
       
-      <nav className=' py-6 '>
+      <nav className=' pt-6 '>
         <ul className='flex w-full max-w-[1139px] mx-auto items-center justify-center   text-center text-[17px] font-normal leading-[20px] text-gray-800'>
           <li><Image src={headerLogo_sm} alt='logo' className='pl-4 md:hidden '/></li>
           <li className='mr-auto pl-4 shrink-0'><Image src={header_logo} alt='logo' className='hidden md:block '/></li>

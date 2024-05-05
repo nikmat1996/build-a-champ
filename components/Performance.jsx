@@ -1,6 +1,7 @@
 import Image from "next/image"
-import performance_lg from '../assets/images/performance_lg.png'
-import performance_sm from '../assets/images/performance_sm.png'
+import performance_lg from '../assets/images/performance_lg.jpg'
+// import performance_lg from '../assets/images/performance_lg.png'
+import performance_sm from '../assets/images/performance_sm.jpg'
 import performance from '../assets/gifs/performance.gif'
 
 const performanceText = {
@@ -12,7 +13,7 @@ const Performance = () => {
   return (
     <section className="pt-1.5 md:pt-20 px-5 pb-14 md:pb-28" id="performance">
       <div className='flex flex-col items-center w-full max-w-[1139px] mx-auto md:flex-row-reverse md:justify-between md:items-start'>
-        <Image alt="girl checking stats" src={performance_lg} className='hidden md:block  self-center w-full'/>
+        <Image alt="girl checking stats" src={performance_lg} className='hidden md:block self-center w-full rounded-[30px]'/>
         <Image alt="girl checking stats small" src={performance_sm} className='md:hidden'/>
         <div className='w-full max-w-[629px] '>
             <div className='flex flex-row-reverse justify-center items-center md:flex-col md:items-start'>
