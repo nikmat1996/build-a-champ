@@ -67,7 +67,7 @@ const Footer = () => {
             <Twitter color='black' size={15} />
           </Button> */}
         </div>
-        <p className='text-[10px] leading-3 md:text-sm md:leading-[18px] text-center py-4'>All rights reserved@buidachamp.com</p>
+        <p className='text-[10px] leading-3 md:text-sm md:leading-[18px] text-center py-4'>All rights reserved@buildachamp.com</p>
       </div>
     </footer>
   )

@@ -177,7 +177,7 @@ const Calender = props => {
                   {format(day, 'd')}
                 </time>
               </div>
-              <div className='p-1 mt-1  grid grid-cols-2  gap-0.5'>
+              <div className='p-0.5 sm:p-1 mt-1  grid grid-cols-2  gap-0.5'>
                 {isToday(day) && <SportSlip sport={"badminton"} id={'123124'} onClick={() => handleSportClick("123123")}/> }
               </div>
             </div>
@@ -307,9 +307,9 @@ const SportSlip = ({sport, onClick}) => {
     swimming
   }
   return (
-    <div className='flex gap-x-1 cursor-pointer' onClick={onClick}>
-      <Image src={icons[sport]} alt='sport icon' className='shrink-0'/>
-      <p className='capitalize text-black text-[8px] font-light'>{sport}</p>
+    <div className='flex gap-x-0.5 lg:gap-x-1 cursor-pointer items-center' onClick={onClick}>
+      <Image src={icons[sport]} alt='sport icon' className='w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5'/>
+      <p className='capitalize text-black text-[3px] sm:text-[4px] md:text-[5px] lg:text-[7px] xl:text-[8px] font-light'>{sport}</p>
     </div>
   )
 }

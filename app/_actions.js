@@ -57,7 +57,15 @@ export async function saveContact(state, formData){
 
 }
 
-export async function getData(sports, ageRange, gender, dateStr){
+// export async function getData(sports, ageRange, gender, dateStr){
+//     return {
+//         data: {
+//             sports, ageRange, gender, dateStr
+//         }
+//     }
+// }
+
+export async function addEvent(){
     return {
         data: {
             sports, ageRange, gender, dateStr

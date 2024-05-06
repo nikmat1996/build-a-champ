@@ -20,10 +20,12 @@ const Hero = () => {
           <div className="absolute top-0 -z-10 hidden md:block">
             <Image src={heroImg_lg} alt="kids image" className="hidden md:block w-full "/>
           </div>
-          <Image src={heroImg_sm} alt="kids image" className=" md:hidden w-full"/>
+          <div className=" md:hidden  max-w-max max-h-max overflow-hidden">
+            <Image src={heroImg_sm} alt="kids image" className=" md:hidden w-full -translate-x-4"/>
+          </div>
           <div className="flex flex-col items-center gap-y-3 justify-center w-full max-w-[580px] pb-6 md:pb-0 ">
-              <h1 className="text-[40px]/tight md:text-5xl lg:text-7xl/tight font-bold  md:max-w-[580px] ">{textHero.h1}</h1>
-              <h3 className="text-xl md:text-4xl/tight font-medium  tracking-tight  md:max-w-[580px]">{textHero.h3}</h3>
+              <h1 className="text-[40px]/tight md:text-5xl lg:text-7xl/tight font-bold  md:max-w-[580px] text-center">{textHero.h1}</h1>
+              <h3 className="text-xl md:text-4xl/tight font-medium  tracking-tight  md:max-w-[580px] text-center">{textHero.h3}</h3>
           </div>
         </div>
       </section>
