@@ -20,7 +20,7 @@ const Hero = () => {
           <div className="absolute top-0 -z-10 hidden md:block">
             <Image src={heroImg_lg} alt="kids image" className="hidden md:block w-full "/>
           </div>
-          <div className=" md:hidden  max-w-max max-h-max overflow-hidden">
+          <div className=" md:hidden  max-w-max max-h-max overflow-x-hidden">
             <Image src={heroImg_sm} alt="kids image" className=" md:hidden w-full -translate-x-4"/>
           </div>
           <div className="flex flex-col items-center gap-y-3 justify-center w-full max-w-[580px] pb-6 md:pb-0 ">
