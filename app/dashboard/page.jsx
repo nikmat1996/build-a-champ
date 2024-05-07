@@ -4,6 +4,7 @@ import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import React, { useState } from 'react'
 import { Input } from '@/components/ui/input'
+import { Label } from "@/components/ui/label"
 import {
   Select,
   SelectContent,
@@ -53,12 +54,12 @@ const Dashboard = () => {
 
   return (
     <section className='mx-auto max-w-4xl border-x-2  py-10'>
-      <form action='' className='flex flex-col items-center gap-y-10'>
+      <form action='' className='flex flex-col items-center gap-y-10 px-2'>
         <h2>ADD EVENT</h2>
 
 
         <Select name='sport'>
-          <SelectTrigger className='w-full max-w-[400px]'>
+          <SelectTrigger className='w-full max-w-[400px] text-muted-foreground text-sm'>
             <SelectValue placeholder='Select Sport' />
           </SelectTrigger>
           <SelectContent>
@@ -92,7 +93,7 @@ const Dashboard = () => {
         <TimePicker onChange={onChange} value={value} className={"w-full max-w-[400px] rounded-lg"}/>
 
         <Select name='gender'>
-          <SelectTrigger className='w-full max-w-[400px]'>
+          <SelectTrigger className='w-full max-w-[400px] text-muted-foreground text-sm'>
             <SelectValue placeholder='Select Gender' />
           </SelectTrigger>
           <SelectContent>
@@ -102,8 +103,13 @@ const Dashboard = () => {
 
         <Input type="text" name={"category"} placeholder="Category" className="w-full max-w-[400px]"/>
         <Input type="number" name={"price"} placeholder="Price" className="w-full max-w-[400px]"/>
-        <textarea type="textarea" name={"address"} placeholder="Address" className="w-full max-w-[400px] border rounded-lg p-2 focus-within:outline-black "/>
+        <textarea type="textarea" name={"address"} placeholder="Address" className="w-full max-w-[400px] text-sm border rounded-lg p-2 placeholder-[#64748B] focus-within:outline-black "/>
         <Input type="tel" name={"phone"} placeholder="Phone" className="w-full max-w-[400px]"/>
+
+        <div className="grid w-full max-w-sm items-center gap-1.5 text-[#64748B]">
+          <Label htmlFor="picture">Select Image</Label>
+          <Input id="picture" type="file" />
+        </div>
 
         <Button type="submit" className="px-20">Add</Button>
 
