@@ -2,7 +2,7 @@
 
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
-import React from 'react'
+import React, { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import {
   Select,
@@ -44,10 +44,10 @@ const genderOpt = [
   { value: 'both', label: 'Male and Female' }
 ]
 
-const page = () => {
+const Dashboard = () => {
 
-  const [date, setDate] = React.useState()
-  const [value, onChange] = React.useState('10:00');
+  const [date, setDate] = useState()
+  const [value, onChange] = useState('10:00');
 
 
 
@@ -112,4 +112,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Dashboard
