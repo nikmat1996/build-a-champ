@@ -7,6 +7,9 @@ import teamSpirit from '../assets/images/teamSpirit.jpeg'
 import brainGym from '../assets/images/brainGym.jpeg'
 import confidenceFireworks from '../assets/images/confidenceFireworks.jpeg'
 import fitnessFiesta from '../assets/images/fitnessFiesta.jpeg'
+import championsClassroom from '../assets/images/championsClassroom.jpeg'
+import stressSmash from '../assets/images/stressSmash.jpeg'
+import friendzyVibes from '../assets/images/friendzyVibes.jpeg'
 // import moodMagic from '../assets/images/moodMagic.jpeg'
 import { ImportanceCarousel } from './ImportanceCarousel'
 // /Users/nm/Documents/code/proj/build-a-champ/assets/images/card.png
@@ -42,17 +45,17 @@ const importanceText = {
     {
       h3: "Friend-zy Vibes 🎈",
       p: "Sports are the ultimate social network, minus the screens. They’re about fist bumps, teamwork, and friendships that could last a lifetime. It's the perfect place for kids to mingle and parents to kindle new friendships with some fan cheering on the side.",
-      img: cardImg
+      img: championsClassroom
     },
     {
       h3: "Stress Smash 🎾",
       p: "Feeling wound up? Sports are your go-to stress smashers. Nothing beats the thrill of the game in melting away worries. It’s all about the rush, the plays, and the sheer joy of the game. Why stress when you can press play on play?",
-      img: cardImg
+      img: stressSmash
     },
     {
       h3: "Champion’s Classroom 🏆",
       p: "Winning is awesome, but sports offer more than just trophies. They’re about learning the ropes of both triumph and loss. It’s where you learn to play fair, swing back from setbacks, and wear both victory and defeat with pride, all invaluable lessons off the field.",
-      img: cardImg
+      img: friendzyVibes
     }
   ]
 }
