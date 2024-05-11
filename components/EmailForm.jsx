@@ -20,16 +20,17 @@ const EmailForm = () => {
     if (emailState?.error) {
       // formRef.current.reset()
       toast({
-        title: 'Oops! ',
+        title: 'Error! ',
         description: emailState.error.email
       })
     }
 
-    if (emailState?.data) {
+    if (emailState?.success) {
+      console.log(emailState)
       formRef.current.reset()
       toast({
         title: 'Success! ',
-        description: emailState.data.email + ' subscribed to news letter.'
+        description: emailState.success.email + ' subscribed to news letter.'
       })
       setIsModalActive(true)
     }
