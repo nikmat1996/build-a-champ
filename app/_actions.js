@@ -75,6 +75,7 @@ export async function saveContact(state, formData){
 
 
 export async function addEvent(formData){
+    console.log(process.env.DATABASE_URL)
 
     if(formData.get('password') !== process.env.PASSWORD){
         return {
