@@ -110,9 +110,9 @@ const Calender = props => {
   }, []);
   console.log(eventsObj)
 
-  const handleSportClick = (id) => {
-    console.log(id)
-    setModalEvent(id)
+  const handleSportClick = (event) => {
+    console.log(event)
+    setModalEvent(event)
     setShowModal(true)
   }
 
@@ -192,7 +192,7 @@ const Calender = props => {
               </div>
               <div className='p-0.5 sm:p-1 mt-1  grid grid-cols-2  gap-0.5'>
                 {eventsObj[new Date(day).toISOString()] && eventsObj[new Date(day).toISOString()].map(event => 
-                  <SportSlip key={event.id} sport={"badminton"} id={'123124'} onClick={() => handleSportClick("123123")}/>
+                  <SportSlip key={event.id} sport={event.sport} event={event} onClick={() => handleSportClick(event)}/>
                 )}
               </div>
             </div>
@@ -203,10 +203,10 @@ const Calender = props => {
         <DialogContent className="sm:max-w-[479px] p-1 rounded-none">
           <div className='grid grid-cols-2'>
             <div className='p-1'>
-              <Image src={modalImg} alt='sport image'/>
+              <Image src={modalEvent.url} alt='sport image' className='w-full' width={100} height={100}/>
             </div>
             <div className='pt-6 px-1 flex flex-col gap-2'>
-              <DialogHeader className={"font-bold text-[#080809] text-[10.51px] leading-tight md:text-[15px] "}>Badminton Tournament </DialogHeader>
+              <DialogHeader className={"font-bold text-[#080809] text-[10.51px] leading-tight md:text-[15px] capitalize"}>{modalEvent.sport} Tournament </DialogHeader>
 
 
               <div className="w-full max-w-[185px] h-[19px]">
@@ -223,7 +223,7 @@ const Calender = props => {
                   >
                     <line x1="0.5" x2="0.5" y2="16" stroke="#84829A"></line>
                   </svg>
-                  <p className="w-[81px]  text-[15px] font-semibold text-left text-[#84829a]">8:00 AM</p>
+                  <p className="w-[81px]  text-[15px] font-semibold text-left text-[#84829a]">{modalEvent.time}</p>
 
                 
                 </div>
@@ -232,7 +232,7 @@ const Calender = props => {
               <p className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">
                 <span className="w-full max-w-[231px] text-[15px] font-semibold text-left text-[#84829a]">Gender:</span>
                 <span className="w-full max-w-[231px] text-[15px] font-medium text-left text-[#84829a]"> </span>
-                <span className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">Boys and Girls</span>
+                <span className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">{modalEvent.gender}</span>
               </p>
 
               <p className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">
@@ -244,7 +244,7 @@ const Calender = props => {
               <p className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">
                 <span className="w-full max-w-[231px] text-[15px] font-semibold text-left text-[#84829a]">Entry Fee:</span>
                 <span className="w-full max-w-[231px] text-[15px] font-medium text-left text-[#84829a]"> </span>
-                <span className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">Rs 700</span>
+                <span className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">Rs {modalEvent.price}</span>
               </p>
 
               <div className='flex gap-2'>
@@ -272,7 +272,7 @@ const Calender = props => {
                 </svg>
                 <p className="w-full max-w-[197px] text-xs font-light text-left text-[#84829a]">
                   <span className="w-[197px] text-xs font-light text-left text-[#84829a]">
-                    Sunshine Badminton Academy Ramapuram, Chennai - 600089
+                  {modalEvent.address}
                   </span>
                   <br />
                   <span className="w-[197px] text-xs font-light text-left text-[#84829a]">https://maps.app.com</span>
@@ -282,7 +282,7 @@ const Calender = props => {
 
               <div className="w-full max-w-[214px] h-[15px]">
                 <p className="w-[197px] absolute left-64 top-[257px] text-xs font-light text-left text-[#84829a]">
-                  9791915623, 9791915623
+                {modalEvent.phone}
                 </p>
                 <svg
                   width="12"
@@ -313,7 +313,7 @@ const Calender = props => {
 
 export default Calender
 
-const SportSlip = ({sport, onClick}) => {
+const SportSlip = ({sport, onClick, event}) => {
 
   const icons = {
     badminton: badminton,
@@ -323,7 +323,7 @@ const SportSlip = ({sport, onClick}) => {
   }
   return (
     <div className='flex gap-x-0.5 lg:gap-x-1 cursor-pointer items-center' onClick={onClick}>
-      <Image src={icons[sport]} alt='sport icon' className='w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5'/>
+      <Image src={icons[sport] || icons.badminton} alt='sport icon' className='w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5'/>
       <p className='capitalize text-black text-[3px] sm:text-[4px] md:text-[5px] lg:text-[7px] xl:text-[8px] font-light'>{sport}</p>
     </div>
   )
