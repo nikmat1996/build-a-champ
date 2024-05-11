@@ -106,6 +106,7 @@ const Calender = props => {
       .catch(error => {
         console.error('Error:', error);
       });
+      setToday(startToday)
 
   }, []);
   console.log(eventsObj)
