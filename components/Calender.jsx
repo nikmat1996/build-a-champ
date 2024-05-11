@@ -17,6 +17,7 @@ import {
   endOfMonth,
   format,
   getDay,
+  isSameDay,
   isToday,
   startOfMonth,
   startOfToday
@@ -183,7 +184,7 @@ const Calender = props => {
             >
               <div
                 className={twMerge(
-                  isToday(day) && 'text-[#FCA76B]',
+                  isSameDay(day, today) && 'text-[#FCA76B]',
                   'text-center text-[6.5px] leading-[10px] md:text-[17px] md:leading-[24px] '
                 )}
               >
