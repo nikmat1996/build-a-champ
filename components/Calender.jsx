@@ -34,6 +34,8 @@ let colStartClasses = [
   'col-start-7'
 ]
 
+const eventsObj = {}
+
 const Calender = props => {
   
   const { sports, ageRange, gender } = props
@@ -48,7 +50,7 @@ const Calender = props => {
   
   // let count = 0;
 
-  console.log(sports, ageRange, gender)
+  // console.log(sports, ageRange, gender)
   let months = eachMonthOfInterval({
     start: today,
     end: addMonths(today, 2)
@@ -61,7 +63,7 @@ const Calender = props => {
     end: endOfMonth(firstDaySelectedMonth)
   })
 
-  console.log('current Time', new Date(Date.now()).toLocaleString())
+  console.log(days)
 
   const handleChangeMonth = delta => {
     setCount(init => {
@@ -73,11 +75,11 @@ const Calender = props => {
 
   const getData = async () => {
     try {
-      // const response = await fetch('/api/events');
-      // if (!response.ok) {
-      //   throw new Error('Failed to fetch data');
-      // }
-      // return response.json();
+      const response = await fetch('/api/events');
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      return response.json();
     } catch (error) {
         console.error('Error fetching data:', error);
       
@@ -88,14 +90,25 @@ const Calender = props => {
   useEffect(() => {
     
     getData()
-      .then(data => {
-        console.log('Data:', data);
+      .then(res => {
+        console.log('Res:', res);
+        res.data.forEach(event => {
+          if(event.date in eventsObj) {
+            // console.log("running", typeof event.date)
+            // console.log("running", typeof days[0])
+            // console.log(eventsObj)
+            eventsObj[event.date].push(event)
+          }
+          else eventsObj[event.date] = [event]
+        })
+        setEvents(res.data)
       })
       .catch(error => {
         console.error('Error:', error);
       });
 
   }, []);
+  console.log(eventsObj)
 
   const handleSportClick = (id) => {
     console.log(id)
@@ -178,7 +191,9 @@ const Calender = props => {
                 </time>
               </div>
               <div className='p-0.5 sm:p-1 mt-1  grid grid-cols-2  gap-0.5'>
-                {isToday(day) && <SportSlip sport={"badminton"} id={'123124'} onClick={() => handleSportClick("123123")}/> }
+                {eventsObj[new Date(day).toISOString()] && eventsObj[new Date(day).toISOString()].map(event => 
+                  <SportSlip key={event.id} sport={"badminton"} id={'123124'} onClick={() => handleSportClick("123123")}/>
+                )}
               </div>
             </div>
           ))}

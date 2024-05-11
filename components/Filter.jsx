@@ -62,12 +62,12 @@ const Filter = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
-    console.log("handleSubmit", formData)
-    console.log(formData.get("gender"))
+    // console.log("handleSubmit", formData)
+    // console.log(formData.get("gender"))
     const params = new URLSearchParams(searchParams);
 
     formData.forEach((value, key) => {
-      console.log(value, key)
+      // console.log(value, key)
       if (value) {
         params.set(key, value);
       } else {

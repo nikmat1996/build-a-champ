@@ -53,13 +53,13 @@ const Dashboard = () => {
   const [date, setDate] = useState()
   const [value, onChange] = useState('10:00');
   const { toast } = useToast()
-  console.log(date)
+  // console.log(date)
   
   const submitAction = async (formData) => {
 
    formData.set('date', date)
     const res = await addEvent(formData)
-    console.log(res)
+    // console.log(res)
     if(res.success){
       toast({
         title: 'Success! ',

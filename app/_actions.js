@@ -3,7 +3,7 @@
 import prisma from "@/lib/prisma";
 import { EmailSchema } from "@/lib/schema";
 
-console.log(prisma)
+// console.log(prisma)
 // console.log(prisma.sportevent)
 
 export async function subscribe(state, formData){
@@ -11,7 +11,7 @@ export async function subscribe(state, formData){
         email: formData.get("email")
     })
 
-    console.log(result)
+    // console.log(result)
 
     if(result.error){
         return {
@@ -27,14 +27,14 @@ export async function subscribe(state, formData){
               email: result.data.email
             }
           });
-        console.log(newSubscription.email)
+        // console.log(newSubscription.email)
         return {
             success: newSubscription
         }
     } catch (error) {
-        console.log(error)
+        // console.log(error)
        
-        console.log("running")
+        // console.log("running")
         return {
             error: { email: error.message }
         }
@@ -75,7 +75,7 @@ export async function saveContact(state, formData){
 
 
 export async function addEvent(formData){
-    console.log(process.env.DATABASE_URL)
+    // console.log(process.env.DATABASE_URL)
 
     if(formData.get('password') !== process.env.PASSWORD){
         return {
@@ -100,7 +100,7 @@ export async function addEvent(formData){
             }
         });
 
-        console.log(event)
+        // console.log(event)
 
         return {
             success: {
@@ -108,7 +108,7 @@ export async function addEvent(formData){
             }
         }
     } catch (error) {
-        console.log(error?.message)
+        // console.log(error?.message)
         return {
             error: {
                 message: error?.message
