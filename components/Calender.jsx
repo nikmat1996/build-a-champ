@@ -76,7 +76,7 @@ const Calender = props => {
 
   const getData = async () => {
     try {
-      const response = await fetch('/api/events');
+      const response = await fetch('/api/events', { next: { tags: ['events'] }});
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
