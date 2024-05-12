@@ -43,6 +43,42 @@ export async function subscribe(state, formData){
 
 }
 
+export async function deleteEvent(state, formData){
+    const id = formData.get("id")
+    console.log(id)
+
+    if(!id){
+        return {
+            error: {
+                message: "id not found"
+            }
+        }
+    }
+
+    try {
+        const deletedEvent = await prisma.sportevent.delete({
+          where: {
+            id: parseInt(id)
+          }
+        });
+        console.log('Deleted event:', deletedEvent);
+        revalidatePath("/delete")
+
+
+        return {
+            success: "Deleted."
+        }
+      } catch (error) {
+        console.log(error)
+        return {
+            error: {
+                message: "prisma error or db error"
+            }
+        }
+      }
+
+}
+
 export async function saveContact(state, formData){
     // const result = EmailSchema.safeParse({
     //     email: formData.get("email")

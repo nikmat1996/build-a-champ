@@ -8,6 +8,9 @@ import badminton from '@/assets/icons/badminton.png'
 import football from '@/assets/icons/football.png'
 import tableTennis from '@/assets/icons/tableTennis.png'
 import swimming from '@/assets/icons/swimming.png'
+import athletics from '@/assets/icons/athletics.svg'
+import tennis from '@/assets/icons/tennis.svg'
+import cricket from '@/assets/icons/cricket.svg'
 import modalImg from '@/assets/images/modalImg.png'
 
 import {
@@ -321,7 +324,10 @@ const SportSlip = ({sport, onClick, event}) => {
     badminton: badminton,
     football: football,
     tableTennis,
-    swimming
+    swimming,
+    athletics,
+    tennis,
+    cricket
   }
   return (
     <div className='flex gap-x-0.5 lg:gap-x-1 cursor-pointer items-center' onClick={onClick}>
