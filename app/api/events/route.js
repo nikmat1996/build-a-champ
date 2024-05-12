@@ -5,8 +5,8 @@ import { cookies } from 'next/headers'
 
 export const GET = async (req, res) => {
 
-  const cookieStore = cookies()
-  const token = cookieStore.get('token')
+  // const cookieStore = cookies()
+  // const token = cookieStore.get('token')
   try {
     console.log('testing get')
     const today = new Date()
