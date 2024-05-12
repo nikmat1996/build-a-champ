@@ -2,7 +2,7 @@
 
 import prisma from "@/lib/prisma";
 import { EmailSchema } from "@/lib/schema";
-import { revalidateTag } from 'next/cache'
+import { revalidatePath } from 'next/cache'
 // console.log(prisma)
 // console.log(prisma.sportevent)
 
@@ -101,7 +101,7 @@ export async function addEvent(formData){
         });
 
         // console.log(event)
-        revalidateTag('events')
+        revalidatePath('/', 'layout')
 
 
         return {

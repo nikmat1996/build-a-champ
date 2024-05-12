@@ -23,6 +23,9 @@ export const GET = async (req, res) => {
         ]
       }
     })
+
+    // const events = await prisma.sportevent.findMany()
+
     console.log(events)
     return new Response(JSON.stringify({ success: true, data: events }))
 

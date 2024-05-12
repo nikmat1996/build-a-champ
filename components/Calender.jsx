@@ -64,7 +64,7 @@ const Calender = props => {
     end: endOfMonth(firstDaySelectedMonth)
   })
 
-  console.log(days)
+  // console.log(days)
 
   const handleChangeMonth = delta => {
     setCount(init => {
@@ -76,7 +76,7 @@ const Calender = props => {
 
   const getData = async () => {
     try {
-      const response = await fetch('/api/events', { next: { revalidate: 30 } });
+      const response = await fetch('/api/events');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
