@@ -176,7 +176,7 @@ const Calender = props => {
     else eventsObj[event.date] = [event]
   })
 
-  console.log("modalEvent", modalEvent)
+  // console.log("modalEvent", modalEvent)
 
   return (
     <section className='mx-auto w-full max-w-[1139px] px-5 pb-16 pt-2.5 md:pt-9 xl:px-0'>
@@ -263,18 +263,18 @@ const Calender = props => {
       </div>
 
       <Dialog open={showModal} onOpenChange={setShowModal} >
-        <DialogContent className="sm:max-w-[479px] p-1 rounded-none">
-          <div className='grid grid-cols-2'>
+        <DialogContent className="  rounded-none max-w-4xl p-0 ">
+          <div className='grid grid-cols-2 '>
             <div className='p-1'>
               <Image src={modalEvent.url} alt='sport image' className='w-full' width={100} height={100}/>
             </div>
-            <div className='pt-6 px-1 flex flex-col gap-2'>
-              <DialogHeader className={"font-bold text-[#080809] text-[10.51px] leading-tight md:text-[15px] capitalize"}>{modalEvent.sport} Tournament </DialogHeader>
+            <div className='pt-3 sm:pt-6 px-1 sm:px-3 md:px-5 lg:px-7 flex flex-col gap-2 sm:gap-3 md:gap-6 '>
+              <DialogHeader className={"font-bold text-[#080809] text-left sm:text-center text-[12px] sm:text-[15px] md:text-2xl leading-tight capitalize"}>{modalEvent.sport} Tournament </DialogHeader>
 
               {/* date and time */}
-              <div className="w-full  h-[19px] text-[#84829a]">
+              <div className="w-full   text-[#84829a]">
                 <div className="w-full flex gap-x-2 items-center">
-                  <p className="   text-[15px] font-semibold text-left text-[#84829a]">{modalEvent.date ? format(modalEvent.date, "do LLL yyyy"): "Date NA"}</p>
+                  <p className="font-semibold text-left text-[10px] sm:text-[15px] md:text-xl text-[#84829a]">{modalEvent.date ? format(modalEvent.date, "do LLL yyyy"): "Date NA"}</p>
                   <svg
                     width="1"
                     height="16"
@@ -286,37 +286,37 @@ const Calender = props => {
                   >
                     <line x1="0.5" x2="0.5" y2="16" stroke="#84829A"></line>
                   </svg>
-                  <p className="w-[81px]  text-[15px] font-semibold text-left ">{modalEvent.time}</p>
+                  <p className="text-left text-[10px] sm:text-[15px] md:text-xl font-semibold ">{modalEvent.time}</p>
                 </div>
               </div>
 
-              <p className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">
-                <span className="font-semibold text-left ">Gender:</span>
-                <span className=" text-[15px]  capitalize">{modalEvent.gender}</span>
+              <p className="w-full leading-none text-left text-[15px] text-[#84829a] space-x-1 sm:space-x-2 ">
+                <span className="font-semibold text-left text-[10px] sm:text-[15px] md:text-xl ">Gender:</span>
+                <span className=" text-left text-[10px] sm:text-[15px] md:text-xl   capitalize">{modalEvent.gender}</span>
               </p>
-              <div className='flex flex-col'>
 
-              <p className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">
-                <span className="w-full max-w-[231px] text-[15px] font-semibold text-left ">Category:</span>
-                <span className="w-full max-w-[231px] text-[15px] font-medium text-left ">Singles/Doubles </span>
-              </p>
-              <p className="w-full  text-[15px] text-left text-[#84829a]"> ({modalEvent.age9_12 && "U-12,"} {modalEvent.age12_15 && "U-15,"} {modalEvent.age15_18 && "U-18,"} {modalEvent.age18_30 && "18 - 30,"} {modalEvent.age30_ && "A-30,"})</p>
+              <div className='flex flex-col'>
+                <p className="text-left text-[10px] sm:text-[15px] md:text-xl text-[#84829a] space-x-1 sm:space-x-2">
+                  <span className=" font-semibold text-left text-[10px] sm:text-[15px] md:text-xl ">Category:</span>
+                  <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-medium ">Singles/Doubles </span>
+                </p>
+                <p className="text-left text-[10px] sm:text-[15px] md:text-xl text-[#84829a]"> ({modalEvent.age9_12 && "U-12,"} {modalEvent.age12_15 && "U-15,"} {modalEvent.age15_18 && "U-18,"} {modalEvent.age18_30 && "18 - 30,"} {modalEvent.age30_ && "A-30,"})</p>
               </div>
 
-              <p className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">
-                <span className="w-full max-w-[231px] text-[15px] font-semibold text-left ">Entry Fee:</span>
-                <span className="w-full max-w-[231px] text-[15px] font-medium text-left "> </span>
-                <span className="w-full max-w-[231px] text-[15px] text-left ">Rs {modalEvent.price}</span>
+              <p className="text-left text-[10px] sm:text-[15px] md:text-xl text-[#84829a]">
+                <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-semibold  ">Entry Fee:</span>
+                <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-medium  "> </span>
+                <span className="text-left text-[10px] sm:text-[15px] md:text-xl  ">Rs {modalEvent.price}</span>
               </p>
 
-              <div className='flex gap-2'>
+              <div className='flex gap-1 sm:gap-2 md:gap-3'>
                 <svg
                   width="11"
                   height="16"
                   viewBox="0 0 11 16"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-[9px] h-[14.16px]"
+                  className="w-2 h-3 mt-0.5 sm:w-3 sm:h-5"
                   preserveAspectRatio="none"
                 >
                   <path
@@ -333,17 +333,17 @@ const Calender = props => {
                   ></path>
                 </svg>
                 <p className="w-full max-w-[197px] text-xs font-light text-left text-[#84829a]">
-                  <span className="w-[197px] text-xs font-light text-left text-[#84829a]">
+                  <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-light text-[#84829a]">
                   {modalEvent.address}
                   </span>
                   <br />
-                  <span className="w-[197px] text-xs font-light text-left text-[#84829a]">https://maps.app.com</span>
+                  <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-light text-[#84829a]">https://maps.app.com</span>
                 </p>
               </div>
               
 
-              <div className="w-full max-w-[214px] h-[15px]">
-                <p className="w-[197px] absolute left-64 top-[257px] text-xs font-light text-left text-[#84829a]">
+              <div className="w-full flex flex-row-reverse justify-end gap-1 sm:gap-2 md:gap-3 items-center">
+                <p className="text-left text-[10px] sm:text-[15px] md:text-xl font-light  text-[#84829a]">
                 {modalEvent.phone}
                 </p>
                 <svg
@@ -352,7 +352,7 @@ const Calender = props => {
                   viewBox="0 0 12 12"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="absolute left-[238.5px] top-[258.5px]"
+                  className="w-2 h-2 sm:w-3 sm:h-3"
                   preserveAspectRatio="none"
                 >
                   <path
@@ -364,9 +364,6 @@ const Calender = props => {
             </div>
 
           </div>
-
-          
-          
         </DialogContent>
       </Dialog>
     </section>
