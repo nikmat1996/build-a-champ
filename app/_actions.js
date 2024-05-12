@@ -130,12 +130,8 @@ export async function addEvent(formData){
             }
         }
     }
-    console.log(formData.get('age9_12'))
-    console.log(formData.get('age12_15'))
-    console.log(formData.get('age15_18'))
-    console.log(formData.get('age18_30'))
-    console.log(formData.get('age30_'))
-    console.log(formData)
+
+    // console.log(formData)
     
     try {
         const event = await prisma.sportevent.create({
@@ -149,6 +145,11 @@ export async function addEvent(formData){
                 address: formData.get('address'),
                 phone: formData.get('phone'),
                 url: formData.get('url'),
+                age9_12: formData.get('age9_12') == "true" ? true: false,
+                age12_15: formData.get('age12_15')  == "true" ? true: false,
+                age15_18: formData.get('age15_18')  == "true" ? true: false,
+                age18_30: formData.get('age18_30')  == "true" ? true: false,
+                age30_: formData.get('age30_')  == "true" ? true: false
             }
         });
 
@@ -159,11 +160,11 @@ export async function addEvent(formData){
 
         return {
             success: {
-               event: true
+               event
             }
         }
     } catch (error) {
-        // console.log(error?.message)
+        console.log(error?.message)
         return {
             error: {
                 message: error?.message

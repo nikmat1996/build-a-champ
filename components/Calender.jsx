@@ -38,10 +38,30 @@ let colStartClasses = [
   'col-start-7'
 ]
 
-const eventsObj = {}
 
 const Calender = props => {
   
+  const localEvent = {
+    data: [
+      {
+        address: "1st Street, 2nd Road",
+        age9_12: false,
+        age12_15:true,
+        age15_18:true,
+        age18_30:false,
+        age30_:false,
+        category:"Single's and Double's",
+        date: "2024-05-22T18:30:00.000Z",
+        gender:"female",
+        id:1,
+        phone:"+91 7558033622",
+        price:900,
+        sport:"badminton",
+        time:"00:00",
+        url:"https://i.pinimg.com/736x/0e/9e/d7/0e9ed7a401e6559716d613fa35a374df.jpg",
+      }
+    ],
+  }
   const { sports, ageRange, gender } = props
   let startToday = startOfToday()
   const [today, setToday] = useState(startToday);
@@ -49,6 +69,7 @@ const Calender = props => {
   const [events, setEvents] = useState([]);
   const [modalEvent, setModalEvent] = useState("");
   const [showModal, setShowModal] = useState(false);
+
   
   
   
@@ -91,20 +112,24 @@ const Calender = props => {
     }
   };
 
+  // const getData = async () => {
+  //   return localEvent
+  // }
+
   useEffect(() => {
     
     getData()
       .then(res => {
         console.log('Res:', res);
-        res.data.forEach(event => {
-          if(event.date in eventsObj) {
-            // console.log("running", typeof event.date)
-            // console.log("running", typeof days[0])
-            // console.log(eventsObj)
-            eventsObj[event.date].push(event)
-          }
-          else eventsObj[event.date] = [event]
-        })
+        // res.data.forEach(event => {
+        //   if(event.date in eventsObj) {
+        //     // console.log("running", typeof event.date)
+        //     // console.log("running", typeof days[0])
+        //     // console.log(eventsObj)
+        //     eventsObj[event.date].push(event)
+        //   }
+        //   else eventsObj[event.date] = [event]
+        // })
         setEvents(res.data)
       })
       .catch(error => {
@@ -113,13 +138,45 @@ const Calender = props => {
       setToday(new Date().toISOString())
 
   }, []);
-  console.log(eventsObj)
 
   const handleSportClick = (event) => {
     console.log(event)
     setModalEvent(event)
     setShowModal(true)
   }
+  const eventsObj = {}
+
+  events.length && events.filter(item => {
+
+    if(!gender || item.gender === "both") {
+      return true
+    }
+    return item.gender === gender
+
+  }).filter(item => {
+
+    if(!sports){
+      return true
+    }
+    return item.sport === sports
+
+  }).filter(item => {
+
+    if(!ageRange) return true
+
+
+  })
+  .forEach(event => {
+    if(event.date in eventsObj) {
+      // console.log("running", typeof event.date)
+      // console.log("running", typeof days[0])
+      // console.log(eventsObj)
+      eventsObj[event.date].push(event)
+    }
+    else eventsObj[event.date] = [event]
+  })
+
+  console.log("modalEvent", modalEvent)
 
   return (
     <section className='mx-auto w-full max-w-[1139px] px-5 pb-16 pt-2.5 md:pt-9 xl:px-0'>
@@ -204,6 +261,7 @@ const Calender = props => {
           ))}
         </div>
       </div>
+
       <Dialog open={showModal} onOpenChange={setShowModal} >
         <DialogContent className="sm:max-w-[479px] p-1 rounded-none">
           <div className='grid grid-cols-2'>
@@ -213,10 +271,10 @@ const Calender = props => {
             <div className='pt-6 px-1 flex flex-col gap-2'>
               <DialogHeader className={"font-bold text-[#080809] text-[10.51px] leading-tight md:text-[15px] capitalize"}>{modalEvent.sport} Tournament </DialogHeader>
 
-
-              <div className="w-full max-w-[185px] h-[19px]">
+              {/* date and time */}
+              <div className="w-full  h-[19px] text-[#84829a]">
                 <div className="w-full flex gap-x-2 items-center">
-                  <p className="w-[82px]   text-[15px] font-semibold text-left text-[#84829a]">1 Jan, 2024</p>
+                  <p className="   text-[15px] font-semibold text-left text-[#84829a]">{modalEvent.date ? format(modalEvent.date, "do LLL yyyy"): "Date NA"}</p>
                   <svg
                     width="1"
                     height="16"
@@ -228,28 +286,27 @@ const Calender = props => {
                   >
                     <line x1="0.5" x2="0.5" y2="16" stroke="#84829A"></line>
                   </svg>
-                  <p className="w-[81px]  text-[15px] font-semibold text-left text-[#84829a]">{modalEvent.time}</p>
-
-                
+                  <p className="w-[81px]  text-[15px] font-semibold text-left ">{modalEvent.time}</p>
                 </div>
               </div>
 
               <p className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">
-                <span className="w-full max-w-[231px] text-[15px] font-semibold text-left text-[#84829a]">Gender:</span>
-                <span className="w-full max-w-[231px] text-[15px] font-medium text-left text-[#84829a]"> </span>
-                <span className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">{modalEvent.gender}</span>
+                <span className="font-semibold text-left ">Gender:</span>
+                <span className=" text-[15px]  capitalize">{modalEvent.gender}</span>
               </p>
+              <div className='flex flex-col'>
 
               <p className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">
-                <span className="w-full max-w-[231px] text-[15px] font-semibold text-left text-[#84829a]">Category:</span>
-                <span className="w-full max-w-[231px] text-[15px] font-medium text-left text-[#84829a]">Singles/Doubles </span>
-                <p className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]"> (U-9, U-11, U-13, U-15)</p>
+                <span className="w-full max-w-[231px] text-[15px] font-semibold text-left ">Category:</span>
+                <span className="w-full max-w-[231px] text-[15px] font-medium text-left ">Singles/Doubles </span>
               </p>
+              <p className="w-full  text-[15px] text-left text-[#84829a]"> ({modalEvent.age9_12 && "U-12,"} {modalEvent.age12_15 && "U-15,"} {modalEvent.age15_18 && "U-18,"} {modalEvent.age18_30 && "18 - 30,"} {modalEvent.age30_ && "A-30,"})</p>
+              </div>
 
               <p className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">
-                <span className="w-full max-w-[231px] text-[15px] font-semibold text-left text-[#84829a]">Entry Fee:</span>
-                <span className="w-full max-w-[231px] text-[15px] font-medium text-left text-[#84829a]"> </span>
-                <span className="w-full max-w-[231px] text-[15px] text-left text-[#84829a]">Rs {modalEvent.price}</span>
+                <span className="w-full max-w-[231px] text-[15px] font-semibold text-left ">Entry Fee:</span>
+                <span className="w-full max-w-[231px] text-[15px] font-medium text-left "> </span>
+                <span className="w-full max-w-[231px] text-[15px] text-left ">Rs {modalEvent.price}</span>
               </p>
 
               <div className='flex gap-2'>

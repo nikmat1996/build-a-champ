@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "Sportevent" ADD COLUMN     "age12_15" BOOLEAN,
+ADD COLUMN     "age15_18" BOOLEAN,
+ADD COLUMN     "age18_30" BOOLEAN,
+ADD COLUMN     "age30_" BOOLEAN,
+ADD COLUMN     "age9_12" BOOLEAN;
