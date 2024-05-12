@@ -45,12 +45,21 @@ export async function subscribe(state, formData){
 
 export async function deleteEvent(state, formData){
     const id = formData.get("id")
+    const password = formData.get("password")
     console.log(id)
 
     if(!id){
         return {
             error: {
                 message: "id not found"
+            }
+        }
+    }
+
+    if(formData.get('password') !== process.env.PASSWORD){
+        return {
+            error: {
+                message: "Wrong Password"
             }
         }
     }
