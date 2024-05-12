@@ -45,7 +45,7 @@ const DeleteModal = ({ isModalActive, setIsModalActive, eve }) => {
         
         <form ref={formRef} action={action} className='flex flex-col gap-y-2 items-center'>
             <input name='id' defaultValue={eve?.id} className='hidden'/>
-            <input placeholder='PIN' type='password' name='passowrd' className='w-full bg-[#f2f2f2] placeholder:text-[#39425d]/25  rounded-sm text-[10px] md:text-sm placeholder:text-[10px] md:placeholder:text-sm px-2 md:px-3 py-1.5 md:py-2' />
+            <input placeholder='PIN' type='password' name='password' className='w-full bg-[#f2f2f2] placeholder:text-[#39425d]/25  rounded-sm text-[10px] md:text-sm placeholder:text-[10px] md:placeholder:text-sm px-2 md:px-3 py-1.5 md:py-2' />
 
           <SubmitButton />
         </form>
