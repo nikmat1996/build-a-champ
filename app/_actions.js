@@ -101,7 +101,7 @@ export async function addEvent(formData){
         });
 
         // console.log(event)
-        revalidatePath('/', 'layout')
+        // revalidatePath('/', 'layout')
 
 
         return {
