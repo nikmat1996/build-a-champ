@@ -3,6 +3,7 @@
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import React, { useState } from 'react'
+import { useFormState, useFormStatus } from 'react-dom'
 import { Input } from '@/components/ui/input'
 import { Label } from "@/components/ui/label"
 import {
@@ -24,7 +25,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import TimePicker from 'react-time-picker';
-import { useFormState } from 'react-dom'
 import { addEvent } from '../_actions';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -140,7 +140,7 @@ const Dashboard = () => {
         <Input type="password" name={"password"} placeholder="PIN" className="w-full max-w-[400px]"/>
 
 
-        <Button type="submit" className="px-20">Add</Button>
+        <SubmitButton />
 
       </form>
     </section>
@@ -148,3 +148,11 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+
+const SubmitButton = () => {
+  const { pending } = useFormStatus()
+ 
+  return (
+    <Button type="submit" className="px-20">{pending ? "Adding.." : "Add"}</Button>
+  )
+}
