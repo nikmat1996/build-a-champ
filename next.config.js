@@ -16,6 +16,8 @@ const nextConfig = {
           ...getLinkPermissions([
               "i.pinimg.com",
               "images.pexels.com",
+              "drive.google.com",
+              "photos.fife.usercontent.google.com"
           ])
       ]
   }}
