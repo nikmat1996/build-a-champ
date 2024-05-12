@@ -33,13 +33,11 @@ const sports = [
   { value: 'football', label: 'Football' },
   { value: 'badminton', label: 'Badminton' },
   { value: 'basketball', label: 'Basketball' },
-  { value: 'soccer', label: 'Soccer' },
+  { value: 'cricket', label: 'Cricket' },
   { value: 'tennis', label: 'Tennis' },
   { value: 'swimming', label: 'Swimming' },
-  { value: 'running', label: 'Running' },
-  { value: 'cycling', label: 'Cycling' },
-  { value: 'golf', label: 'Golf' },
-  { value: 'hiking', label: 'Hiking' }
+  { value: 'athletics', label: 'Athletics' },
+  { value: 'tableTennis', label: 'Table Tennis' }
 ]
 
 const genderOpt = [

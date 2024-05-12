@@ -26,13 +26,11 @@ const data = {
     label: 'Age',
     options: [
       // { value: 'none', label: 'All' },
-      { value: 'under18', label: 'Under 18' },
-      { value: '18to24', label: '18 - 24' },
-      { value: '25to34', label: '25 - 34' },
-      { value: '35to44', label: '35 - 44' },
-      { value: '45to54', label: '45 - 54' },
-      { value: '55to64', label: '55 - 64' },
-      { value: '65plus', label: '65 and over' }
+      { value: 'age9_12', label: '9 - 12' },
+      { value: 'age12_15', label: '12 - 15' },
+      { value: 'age15_18', label: '15 - 18' },
+      { value: 'age18_30', label: '18 - 30' },
+      { value: 'age30_', label: 'Above 30' },
     ]
   },
   sports: {
@@ -42,13 +40,11 @@ const data = {
       { value: 'football', label: 'Football' },
       { value: 'badminton', label: 'Badminton' },
       { value: 'basketball', label: 'Basketball' },
-      { value: 'soccer', label: 'Soccer' },
+      { value: 'cricket', label: 'Cricket' },
       { value: 'tennis', label: 'Tennis' },
       { value: 'swimming', label: 'Swimming' },
-      { value: 'running', label: 'Running' },
-      { value: 'cycling', label: 'Cycling' },
-      { value: 'golf', label: 'Golf' },
-      { value: 'hiking', label: 'Hiking' }
+      { value: 'athletics', label: 'Athletics' },
+      { value: 'tableTennis', label: 'Table Tennis' },
     ]
   }
 }

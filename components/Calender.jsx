@@ -163,7 +163,7 @@ const Calender = props => {
   }).filter(item => {
 
     if(!ageRange) return true
-
+    return item[ageRange]
 
   })
   .forEach(event => {
