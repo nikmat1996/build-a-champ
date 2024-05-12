@@ -298,7 +298,7 @@ const Calender = props => {
               <div className='flex flex-col'>
                 <p className="text-left text-[10px] sm:text-[15px] md:text-xl text-[#84829a] space-x-1 sm:space-x-2">
                   <span className=" font-semibold text-left text-[10px] sm:text-[15px] md:text-xl ">Category:</span>
-                  <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-medium ">Singles/Doubles </span>
+                  <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-medium ">{modalEvent.category} </span>
                 </p>
                 <p className="text-left text-[10px] sm:text-[15px] md:text-xl text-[#84829a]"> ({modalEvent.age9_12 && "U-12,"} {modalEvent.age12_15 && "U-15,"} {modalEvent.age15_18 && "U-18,"} {modalEvent.age18_30 && "18 - 30,"} {modalEvent.age30_ && "A-30,"})</p>
               </div>
