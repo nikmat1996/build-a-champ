@@ -17,7 +17,8 @@ const nextConfig = {
               "i.pinimg.com",
               "images.pexels.com",
               "drive.google.com",
-              "photos.fife.usercontent.google.com"
+              "photos.fife.usercontent.google.com",
+              "static1.colliderimages.com"
           ])
       ]
   }}
