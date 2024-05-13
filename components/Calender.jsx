@@ -266,7 +266,7 @@ const Calender = props => {
         <DialogContent className="  rounded-none max-w-4xl p-0 ">
           <div className='grid grid-cols-2 '>
             <div className='p-1'>
-              <Image src={modalEvent.url} alt='sport image' className='w-full object-cover h-full' width={100} height={100}/>
+              <Image src={modalEvent.url} alt='sport image' className='w-full object-cover ' quality={90} width={100} height={100}/>
             </div>
             <div className='py-3 sm:py-6 px-1 sm:px-3 md:px-5 lg:px-7 flex flex-col gap-2 sm:gap-3 md:gap-6 '>
               <DialogHeader className={"font-bold text-[#080809] text-left  text-[12px] sm:text-[15px] md:text-2xl leading-tight capitalize"}>{modalEvent.sport} Tournament </DialogHeader>
