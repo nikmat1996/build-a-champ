@@ -18,7 +18,9 @@ const nextConfig = {
               "images.pexels.com",
               "drive.google.com",
               "photos.fife.usercontent.google.com",
-              "static1.colliderimages.com"
+              "static1.colliderimages.com",
+              "i.imgur.com",
+              "imgur.com"
           ])
       ]
   }}
