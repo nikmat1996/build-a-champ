@@ -9,7 +9,7 @@ import { saveContact } from '@/app/_actions'
 import { useToast } from '@/components/ui/use-toast'
 
 
-const ContactModal = ({ isModalActive, setIsModalActive }) => {
+const ContactModal = ({ isModalActive, setIsModalActive, email }) => {
 
   const [state, action] = useFormState(saveContact, null)
   const formRef = useRef()
@@ -47,6 +47,7 @@ const ContactModal = ({ isModalActive, setIsModalActive }) => {
             <input placeholder='Gender' name='gender' className='w-full bg-[#f2f2f2] placeholder:text-[#39425d]/25  rounded-sm text-[10px] md:text-sm placeholder:text-[10px] md:placeholder:text-sm px-2 md:px-3 py-1.5 md:py-2' />
 
           </div>
+          <input type="email" name="email" id="email" defaultValue={email} className='sr-only' />
           <input placeholder='Contact Number' type='tel' name='mobile' className='w-full bg-[#f2f2f2] placeholder:text-[#39425d]/25  rounded-sm text-[10px] md:text-sm placeholder:text-[10px] md:placeholder:text-sm px-2 md:px-3 py-1.5 md:py-2' />
           <textarea placeholder='Address' type='text' name='address' className='w-full h-12 md:h-16 bg-[#f2f2f2] placeholder:text-[#39425d]/25  rounded-sm text-[10px] md:text-sm placeholder:text-[10px] md:placeholder:text-sm px-2 md:px-3 py-1.5 md:py-2' />
           <SubmitButton />

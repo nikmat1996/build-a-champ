@@ -62,7 +62,7 @@ const EmailForm = () => {
           {emailState?.error?.email}
         </p>
       </form>
-      <ContactModal isModalActive={isModalActive} setIsModalActive={setIsModalActive}/>
+      <ContactModal isModalActive={isModalActive} setIsModalActive={setIsModalActive} email={emailState?.success?.email}/>
     </>
   )
 }

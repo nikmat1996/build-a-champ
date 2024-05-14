@@ -1,7 +1,7 @@
 "use server"
 
 import prisma from "@/lib/prisma";
-import { EmailSchema } from "@/lib/schema";
+import { EmailSchema, ContactSchema } from "@/lib/schema";
 import { revalidatePath } from 'next/cache'
 // console.log(prisma)
 // console.log(prisma.sportevent)
@@ -90,33 +90,66 @@ export async function deleteEvent(state, formData){
 }
 
 export async function saveContact(state, formData){
-    // const result = EmailSchema.safeParse({
-    //     email: formData.get("email")
-    // })
+    const result = ContactSchema.safeParse({
+        name: formData.get("name"),
+        age: formData.get("age"),
+        gender: formData.get("gender"),
+        mobile: formData.get("mobile"),
+        address: formData.get("address"),
+        email: formData.get("email")
+    });
 
-    // if(result.success){
-    //     await new Promise((res) => {
-
-    //         setTimeout(() => {
-    //             res()
-    //         }, 2000)
-    //     })
-    //     return {
-    //         data: result.data
-    //     }
-    // }
-
-    // if(result.error){
-    //     return {
-    //         // error: result.error.format()
-    //         error: result.error.flatten().fieldErrors
-    //     }
-    // }
-
-    return {
-        data: "Success"
+    if(result.error){
+        return {
+            error: result.error.flatten().fieldErrors
+        };
     }
+    console.log(result.data)
 
+    const userData = {
+        name: result.data.name,
+        age: result.data.age ? parseInt(result.data.age) : undefined,
+        gender: result.data.gender || null,
+        mobileNumber: result.data.mobile || null,
+        address: result.data.address || null,
+        email: result.data.email,
+    };
+
+    try {
+        // Here you would save the contact data to your database or perform any other necessary actions
+        // For example:
+        await prisma.$transaction(async (prisma) => {
+            // Ensure the subscription exists
+            await prisma.subscription.upsert({
+              where: { email: result.data.email },
+              update: {},
+              create: { email: result.data.email },
+            });
+      
+            // Now create the user
+            const newUser = await prisma.user.create({ data: userData });
+            console.log('User created:', newUser);
+          });
+
+
+        // If the saving operation is successful, you can return the saved data or a success message
+        // return {
+        //     success: newContact
+        // };
+
+        // For now, let's assume the operation was successful and return a success message
+        return {
+            data: "Success",
+            success: "Contact saved successfully"
+        };
+    } catch (error) {
+        // If an error occurs during the operation, return an error message
+        console.log(error)
+        return {
+            data: "Failed",
+            error: { database: error.message }
+        };
+    }
 }
 
 
@@ -131,8 +164,6 @@ export async function addEvent(formData){
         }
     }
 
-    // console.log(formData)
-    
     try {
         const event = await prisma.sportevent.create({
             data: {
@@ -153,11 +184,6 @@ export async function addEvent(formData){
             }
         });
 
-        // console.log(event)
-        // revalidatePath('/', 'layout')
-        // revalidatePath('/api/events')
-
-
         return {
             success: {
                event
@@ -171,16 +197,4 @@ export async function addEvent(formData){
             }
         }
     }
-    
-
-    // const emaill = await prisma.sportevent.create({
-    //     data: {
-    //       email: "hello"
-    //     }
-    // });
-
-
-
-
-   
 }
