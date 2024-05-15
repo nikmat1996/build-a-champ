@@ -385,7 +385,7 @@ const SportSlip = ({sport, onClick, event}) => {
   }
   return (
     <div className='flex gap-x-0.5 lg:gap-x-1 cursor-pointer items-center' onClick={onClick}>
-      <Image src={icons[sport] || icons.badminton} alt='sport icon' className='w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5'/>
+      <Image src={icons[sport] || icons.tennis} alt='sport icon' className='w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5'/>
       <p className='capitalize text-black text-[3px] sm:text-[4px] md:text-[5px] lg:text-[7px] xl:text-[8px] font-light'>{sport}</p>
     </div>
   )
