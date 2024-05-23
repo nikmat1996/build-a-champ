@@ -71,6 +71,7 @@ const Importance = () => {
           alt='gif image'
           src={importance}
           className='h-[43px] w-[43px] rotate-90 md:h-[79px] md:w-[79px]'
+          unoptimized
         />
       </div>
       <div className='mx-auto w-full max-w-[1303px]  px-0 md:px-20'>

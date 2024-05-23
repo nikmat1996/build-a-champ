@@ -18,7 +18,7 @@ const Mission = () => {
         {/* <Image src={mission_sm} alt='boy with ball small' className='md:hidden'/> */}
         <div className='w-full max-w-[629px]  pt-1 md:pt-0'>
             <div className='flex flex-row-reverse justify-center items-center md:flex-col md:items-start'>
-                <Image src={mission} alt='gif image' className='w-[43px] h-[43px] md:w-[150px] md:h-[150px] md:-translate-x-4'/>
+                <Image src={mission} alt='gif image' className='w-[43px] h-[43px] md:w-[150px] md:h-[150px] md:-translate-x-4' unoptimized/>
                 <h2 className='text-2xl/9 font-bold py-2.5 md:text-[50px] md:leading-[57px] md:pb-[30px] '>{missionText.h2}</h2>
             </div>
             <p className='text-[15px] leading-5 md:text-xl/10'>{missionText.p}</p>

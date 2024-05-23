@@ -9,7 +9,11 @@ export const GET = async (req, res) => {
   const token = cookieStore.get('token')
   try {
     console.log('testing get')
+
     const today = new Date()
+    const yesterday = new Date(today);
+    yesterday.setDate(today.getDate() - 1);
+
     const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1)
     const monthAfterNext = new Date(
       today.getFullYear(),
@@ -22,7 +26,7 @@ export const GET = async (req, res) => {
     const events = await prisma.sportevent.findMany({
       where: {
         OR: [
-          { date: { gte: today, lt: nextMonth } },
+          { date: { gte: yesterday, lt: nextMonth } },
           { date: { gte: nextMonth, lt: monthAfterNext } },
           { date: { gte: monthAfterNext } }
         ]
