@@ -6,6 +6,15 @@ import { revalidatePath } from 'next/cache'
 // console.log(prisma)
 // console.log(prisma.sportevent)
 
+export const getEvents = async () => {
+    try {
+        const events = await prisma.sportevent.findMany()
+        return { events }
+    } catch (error) {
+        return { error }
+    }
+}
+
 export async function subscribe(state, formData){
     const result = EmailSchema.safeParse({
         email: formData.get("email")
@@ -183,6 +192,7 @@ export async function addEvent(formData){
                 age30_: formData.get('age30_')  == "true" ? true: false
             }
         });
+        revalidatePath("/delete")
 
         return {
             success: {
