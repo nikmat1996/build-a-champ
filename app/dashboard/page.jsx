@@ -157,52 +157,52 @@ const Dashboard = () => {
         />
 
         <div className='flex w-full max-w-[400px] items-center justify-evenly space-x-2'>
-          <div>
+          <div className='flex items-center gap-1'>
             <Checkbox id='9-12' name="test" checked={age9_12} onClick={() => setAge9_12(x => !x)}/>
             <label
               name="9-12"
               htmlFor='9-12'
-              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-sm font-medium text-[#64748B] mt-0.5 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
               9 - 12
             </label>
           </div>
-          <div>
+          <div className='flex items-center gap-1'>
             <Checkbox id='12-15' name="12-15" checked={age12_15} onClick={() => setAge12_15(x => !x)}/>
             <label
               name="12-15"
               htmlFor='12-15'
-              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-sm font-medium text-[#64748B] mt-0.5 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
               12 - 15
             </label>
           </div>
-          <div>
+          <div className='flex items-center gap-1'>
             <Checkbox id='15-18' checked={age15_18} onClick={() => setAge15_18(x => !x)}/>
             <label
               name="15-18"
               htmlFor='15-18'
-              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-sm font-medium text-[#64748B] mt-0.5 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
               15 - 18
             </label>
           </div>
-          <div>
+          <div className='flex items-center gap-1'>
             <Checkbox id='18-30' checked={age18_30} onClick={() => setAge18_30(x => !x)}/>
             <label
               name="18-30"
               htmlFor='18-30'
-              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-sm font-medium text-[#64748B] mt-0.5 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
               18 - 30
             </label>
           </div>
-          <div>
+          <div className='flex items-center gap-1'>
             <Checkbox id='30-' checked={age30_} onClick={() => setAge30_(x => !x)}/>
             <label
               name="30-"
               htmlFor='30-'
-              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-sm font-medium text-[#64748B] mt-0.5 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
               30 Above
             </label>
