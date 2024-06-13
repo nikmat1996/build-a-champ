@@ -17,7 +17,7 @@ const Performance = () => {
           className='hidden w-full self-center rounded-[30px] md:block'
         /> */}
         {/* <Image alt="girl checking stats small" src={performance_sm} className='md:hidden'/> */}
-        <video className='w-full max-w-xl rounded-3xl' autoPlay loop muted playsInline preload='auto'>
+        <video className='w-full max-w-xl rounded-3xl shadow-lg' autoPlay loop muted playsInline preload='auto'>
           <source src="/PerformanceStat.mp4" type='video/mp4'  />
           
           Your browser does not support the video tag.
