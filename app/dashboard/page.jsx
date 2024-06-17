@@ -3,9 +3,8 @@
 import 'react-time-picker/dist/TimePicker.css'
 import 'react-clock/dist/Clock.css'
 import React, { useState } from 'react'
-import { useFormState, useFormStatus } from 'react-dom'
+import { useFormStatus } from 'react-dom'
 import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import {
   Select,
   SelectContent,
@@ -25,9 +24,11 @@ import {
   PopoverTrigger
 } from '@/components/ui/popover'
 import { Checkbox } from '@/components/ui/checkbox'
-import TimePicker from 'react-time-picker'
+import dynamic from 'next/dynamic'
 import { addEvent } from '../_actions'
 import { useToast } from '@/components/ui/use-toast'
+
+const TimePicker = dynamic(() => import('react-time-picker'), { ssr: false })
 
 const sports = [
   { value: 'football', label: 'Football' },
@@ -49,14 +50,13 @@ const genderOpt = [
 const Dashboard = () => {
   const [date, setDate] = useState()
   const [value, onChange] = useState('10:00')
-  const [age9_12, setAge9_12] = useState(false);
-  const [age12_15, setAge12_15] = useState(false);
-  const [age15_18, setAge15_18] = useState(false);
-  const [age18_30, setAge18_30] = useState(false);
-  const [age30_, setAge30_] = useState(false);
-  
+  const [age9_12, setAge9_12] = useState(false)
+  const [age12_15, setAge12_15] = useState(false)
+  const [age15_18, setAge15_18] = useState(false)
+  const [age18_30, setAge18_30] = useState(false)
+  const [age30_, setAge30_] = useState(false)
+
   const { toast } = useToast()
-  // console.log(date)
 
   const submitAction = async formData => {
     formData.set('date', date)
@@ -66,7 +66,6 @@ const Dashboard = () => {
     formData.set('age18_30', age18_30)
     formData.set('age30_', age30_)
     const res = await addEvent(formData)
-    // console.log(res)
     if (res.success) {
       toast({
         title: 'Success! ',
@@ -84,7 +83,7 @@ const Dashboard = () => {
   }
 
   return (
-    <section className='mx-auto max-w-4xl border-x-2  py-10'>
+    <section className='mx-auto max-w-4xl border-x-2 py-10'>
       <form
         action={submitAction}
         className='flex flex-col items-center gap-y-10 px-2'
@@ -157,52 +156,52 @@ const Dashboard = () => {
         />
 
         <div className='flex w-full max-w-[400px] items-center justify-evenly space-x-2'>
-          <div className='flex items-center gap-1'>
+          <div>
             <Checkbox id='9-12' name="test" checked={age9_12} onClick={() => setAge9_12(x => !x)}/>
             <label
               name="9-12"
               htmlFor='9-12'
-              className='text-sm font-medium text-[#64748B] mt-0.5 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
               9 - 12
             </label>
           </div>
-          <div className='flex items-center gap-1'>
+          <div>
             <Checkbox id='12-15' name="12-15" checked={age12_15} onClick={() => setAge12_15(x => !x)}/>
             <label
               name="12-15"
               htmlFor='12-15'
-              className='text-sm font-medium text-[#64748B] mt-0.5 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
               12 - 15
             </label>
           </div>
-          <div className='flex items-center gap-1'>
+          <div>
             <Checkbox id='15-18' checked={age15_18} onClick={() => setAge15_18(x => !x)}/>
             <label
               name="15-18"
               htmlFor='15-18'
-              className='text-sm font-medium text-[#64748B] mt-0.5 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
               15 - 18
             </label>
           </div>
-          <div className='flex items-center gap-1'>
+          <div>
             <Checkbox id='18-30' checked={age18_30} onClick={() => setAge18_30(x => !x)}/>
             <label
               name="18-30"
               htmlFor='18-30'
-              className='text-sm font-medium text-[#64748B] mt-0.5 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
               18 - 30
             </label>
           </div>
-          <div className='flex items-center gap-1'>
+          <div>
             <Checkbox id='30-' checked={age30_} onClick={() => setAge30_(x => !x)}/>
             <label
               name="30-"
               htmlFor='30-'
-              className='text-sm font-medium text-[#64748B] mt-0.5 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
               30 Above
             </label>
